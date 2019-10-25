@@ -3,7 +3,7 @@
 </p>
 
 <%= form_with( model: @user, method: "patch", local: true ) do |f| %>
-<%= f.hidden_field :nfcid, value: params[:nfcid] %>
+<%= f.hidden_field :ac, value: params[:ac] %>
     <div>
         <label for="name">プレイヤーネーム</label>
         <%= f.text_field :name, placeholder: 'プレイヤーネーム' %>

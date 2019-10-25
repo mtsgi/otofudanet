@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/howto', to: 'top#howto'
 
   resources :sessions, only: [:create, :destroy]
-  resources :users, only: [:update, :edit]
+  resources :users, only: [:update, :edit, :index]
 
   get '/users/enterac', to: 'users#enterac'
   get '/users/register', to: 'users#register'
