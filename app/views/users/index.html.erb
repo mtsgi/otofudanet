@@ -1,0 +1,10 @@
+<p>ユーザー一覧画面(テスト用)</p>
+
+<% @users.each do |u| %>
+    <p>
+        <strong><%= u.nfcid %></strong>
+        <%= u.name %>
+        <%= "(NET登録済)" if u.registered %>
+        AC:<%= u.public_uid %>
+    </p>
+<% end %>

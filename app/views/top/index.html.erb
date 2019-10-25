@@ -1,0 +1,23 @@
+<ul>
+    <li><a href="./users/enterac">カード登録</a></li>
+</ul>
+<% if(!account) %>
+    <%= form_with( url: sessions_path, local: true ) do |f| %>
+        <div class="row">
+            <label for="screen">メールアドレス</label>
+            <%= f.text_field :mail %>
+        </div>
+        <div class="row">
+            <label for="password">パスワード</label>
+            <%= f.password_field :password %>
+        </div>
+        <div class="row">
+            <%= f.submit("ログイン", class: "waves-effect waves-light btn-large button-alt") %>
+        </div>
+    <% end %>
+<% else %>
+    <%= link_to( "ログアウト", "/sessions/" + account&.id.to_s, method: :delete ) %>
+<% end %>
+<ul>
+    <li><a href="/howto">おとふだNETへの初回登録方法</a></li>
+</ul>

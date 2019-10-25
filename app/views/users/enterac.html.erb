@@ -1,0 +1,5 @@
+アクセスコード入力
+<%= form_with( url: users_register_path, method: :get, local: true ) do |f| %>
+    <%= f.text_field :ac, placeholder: 'アクセスコード' %>
+    <%= f.submit('→') %>
+<% end %>

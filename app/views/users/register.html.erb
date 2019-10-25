@@ -1,0 +1,24 @@
+<p>
+    新規のICカードにユーザー情報を登録します。
+</p>
+
+<%= form_with( model: @user, method: "patch", local: true ) do |f| %>
+<%= f.hidden_field :ac, value: params[:ac] %>
+    <div>
+        <label for="name">プレイヤーネーム</label>
+        <%= f.text_field :name, placeholder: 'プレイヤーネーム' %>
+    </div>
+    <div>
+        <label for="mail">メールアドレス</label>
+        <%= f.text_field :mail, placeholder: 'メールアドレス' %>
+    </div>
+    <div>
+        <label for="name">パスワード</label>
+        <%= f.password_field(:password, placeholder: 'パスワード') %>
+    </div>
+    <div>
+        <label for="name">パスワード(確認)</label>
+        <%= f.password_field(:password_confirmation, placeholder: 'パスワード(確認)') %>
+    </div>
+    <%= f.submit('登録') %>
+<% end %>
