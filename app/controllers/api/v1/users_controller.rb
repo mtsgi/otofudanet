@@ -10,7 +10,7 @@ module Api
         if(@user)
           render json: { status: 'SUCCESS', data: @user }
         elsif(params[:id])
-          params[:nfcid] = params[:id]
+          params[:nfcid] = params[:id].downcase
           params[:password] = '0'
           @user = User.new(params.permit(:nfcid, :password))
           if(@user.save)
