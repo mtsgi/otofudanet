@@ -1,10 +1,23 @@
-<p>ユーザー一覧画面(テスト用)</p>
+<h3>ユーザー一覧画面</h3>
+<div>テスト用ページ</div>
 
-<% @users.each do |u| %>
-    <p>
-        <strong><%= u.nfcid %></strong>
-        <%= u.name %>
-        <%= "(NET登録済)" if u.registered %>
-        AC:<%= u.public_uid %>
-    </p>
-<% end %>
+<table class="pure-table pure-table-horizontal m">
+    <thead>
+        <tr>
+            <th>R</th>
+            <th>NFCID</th>
+            <th>SN</th>
+            <th>AC</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |u| %>
+            <tr class='kit-text-l'>
+                <td><%= "✓" if u.registered %></td>
+                <td><strong><%= u.nfcid %></strong></td>
+                <td><%= u.name %></td>
+                <td><%= u.public_uid %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
