@@ -3,5 +3,5 @@ class User < ApplicationRecord
     generate_public_uid generator: PublicUid::Generators::HexStringSecureRandom.new(4)
 
     validates :nfcid, uniqueness: true
-    validates :mail, uniqueness: true
+    validates :mail, uniqueness: true, allow_nil: true
 end
