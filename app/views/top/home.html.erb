@@ -5,6 +5,10 @@
     <h3><strong><%= @user.name %></strong>さん</h3>
 </p>
 
+<p>
+    <%= link_to('対戦履歴を見る', results_path, class: 'pure-button') %>
+</p>
+
 <p>勝利数：<%= @user.wincount %></p>
 
 <p>
