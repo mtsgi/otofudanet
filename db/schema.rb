@@ -10,7 +10,63 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_25_060855) do
+ActiveRecord::Schema.define(version: 2019_11_05_125701) do
+
+  create_table "cards", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.text "description"
+    t.integer "month"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "decks", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.integer "slot1"
+    t.integer "slot2"
+    t.integer "slot3"
+    t.integer "slot4"
+    t.integer "slot5"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "musics", force: :cascade do |t|
+    t.string "name"
+    t.string "artist"
+    t.string "image"
+    t.string "string"
+    t.string "notesdesign"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "easy"
+    t.integer "normal"
+    t.integer "hard"
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.integer "music_id"
+    t.integer "p1_id"
+    t.integer "p1_difficulty"
+    t.integer "p1_score"
+    t.integer "p1_perfect"
+    t.integer "p1_great"
+    t.integer "p1_good"
+    t.integer "p1_bad"
+    t.integer "p1_miss"
+    t.integer "p2_id"
+    t.integer "p2_difficulty"
+    t.integer "p2_score"
+    t.integer "p2_perfect"
+    t.integer "p2_great"
+    t.integer "p2_good"
+    t.integer "p2_bad"
+    t.integer "p2_miss"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
