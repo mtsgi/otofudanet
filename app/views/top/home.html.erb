@@ -1,0 +1,7 @@
+<p>
+    ようこそ <%= @user.name %>さん
+</p>
+
+<p>勝利数：<%= @user.wincount %></p>
+
+<%= link_to( "ログアウト", "/sessions/" + account&.id.to_s, method: :delete ) %>
