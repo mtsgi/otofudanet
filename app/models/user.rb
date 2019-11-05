@@ -4,4 +4,9 @@ class User < ApplicationRecord
 
     validates :nfcid, uniqueness: true
     validates :mail, uniqueness: true
+
+    has_many :p1, class_name: 'Result', :foreign_key => 'p1_id'
+    has_many :p2, class_name: 'Result', :foreign_key => 'p2_id'
+
+
 end
