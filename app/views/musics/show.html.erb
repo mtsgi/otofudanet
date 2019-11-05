@@ -1,0 +1,15 @@
+<h3><%= @page_title = @music.name %></h3>
+<div class="kit-sub m">アーティスト：<%= @music.artist %></div>
+<div class="kit-sub m">譜面制作：<%= @music.notesdesign %></div>
+
+<div class="music-show">
+    <div>
+        <img src="<%= @music.image %>" alt="<%= @music.name %>">
+    </div>
+    <span class="easy"><%= @music.easy %></span>
+    <span class="normal"><%= @music.normal %></span>
+    <span class="hard"><%= @music.hard %></span>
+</div>
+
+<div class="flash">ログインすると成績が閲覧できます</div>
+

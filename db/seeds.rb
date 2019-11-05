@@ -5,4 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!(nfcid: '0000')
+
+Music.create!(name: 'オトフダビヨリ', artist: 'idady', image: 'https://www.ne.senshu-u.ac.jp/~proj2019-13/jacket/otofuda.png', notesdesign: 'マテ茶', easy: 1, normal: 5, hard: 9)
+Music.create!(name: 'Puzzle', artist: 'idady', image: 'https://www.ne.senshu-u.ac.jp/~proj2019-13/jacket/puzzle.png', notesdesign: 'OTOFUDA Sound Team "謎の勢力M"', easy: 4, normal: 8, hard: 10)

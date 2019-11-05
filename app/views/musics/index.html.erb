@@ -1,0 +1,16 @@
+<h3><%= @page_title = '楽曲一覧' %></h3>
+
+<kit-container>
+    <% @musics.each do |music| %>
+        <%= link_to music_path(music.id), class: "kit-box kit-hl-alt kit-pane dark hover" do %>
+            <img src="<%= music.image %>" alt="<%= music.name %>">
+            <div class="kit-font-l">
+                <%= music.name %>
+            </div>
+            <div class="kit-sub"><%= music.artist %></div>
+            <span class="easy"><%= music.easy %></span>
+            <span class="normal"><%= music.normal %></span>
+            <span class="hard"><%= music.hard %></span>
+        <% end %>
+    <% end %>
+</kit-container>
