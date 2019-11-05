@@ -1,4 +1,3 @@
-
 <% if( @user.errors.present? ) %>
     <% @user.errors.full_messages.each do |message| %>
         <div class="error"><%= message %></div>
@@ -10,7 +9,7 @@
 </p>
 
 <%= form_with( model: @user, method: "patch", local: true, class: 'pure-form' ) do |f| %>
-<%= f.hidden_field :ac, value: params[:ac] %>
+    <%= f.hidden_field :id, value: @user.id %>
     <div class='row'>
         <div class="m">プレイヤーネーム</div>
         <%= f.text_field :name, placeholder: 'プレイヤーネーム', required: true, class: 'pure-input-1' %>

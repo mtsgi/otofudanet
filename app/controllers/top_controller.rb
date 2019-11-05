@@ -9,6 +9,19 @@ class TopController < ApplicationController
   end
 
   def option
+    if account
+      @user = account
+    else
+      redirect_to :root
+    end
+  end
+
+  def profile
+    if account
+      @user = account
+    else
+      redirect_to :root
+    end
   end
 
   def howto

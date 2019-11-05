@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/fuda', to: 'top#fuda'
   get '/option', to: 'top#option'
   get '/howto', to: 'top#howto'
+  get '/profile', to: 'top#profile'
 
   resources :sessions, only: [:create, :destroy]
   resources :users, only: [:update, :edit, :index]

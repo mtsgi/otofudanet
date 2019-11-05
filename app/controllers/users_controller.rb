@@ -18,20 +18,23 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find_by( public_uid: params[:user][:ac].downcase )
-    params[:user][:registered] = true
+    @user = User.find( params[:id] )
     if( @user.registered? )
       # 編集時
-
+      if @user.update(params.require(:user).permit(:name, :mail, :password, :registered, :wincount, :hispeed, :slowfast, :comment))
+        flash.notice = "保存しました。"
+        redirect_back(fallback_location: root_path)
+      end
     else
       # 初回登録
-      unless params[:user][:name].length == 0
-        flash.notice = "ユーザー情報を入力してください。"
+      if params[:user][:name].length == 0
+        flash.alert = "ユーザー情報を入力してください。"
         redirect_back(fallback_location: root_path)
         return
       end
+      params[:user][:registered] = true
       params[:user][:wincount] = 0
-      params[:user][:slowfast] = 0
+      params[:user][:slowfast] = false
       params[:user][:hispeed] = 10
       if @user.update(params.require(:user).permit(:name, :mail, :password, :registered, :wincount, :hispeed))
         flash.notice = "初回登録が完了しました。"

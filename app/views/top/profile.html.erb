@@ -1,0 +1,27 @@
+<h3><%= @page_title = 'プロフィール編集' %></h3>
+
+<div>アカウント情報を編集できます。</div>
+
+<% if( @user.errors.present? ) %>
+    <% @user.errors.messages.each do |message| %>
+        <% message[1].each do |m| %>
+            <div class="flash"><%= m %></div>
+        <% end %>
+    <% end %>
+<% end %>
+
+<%= form_with( model: @user, method: "patch", local: true, class: 'pure-form' ) do |f| %>
+    <div class='row'>
+        <div class="m">プレイヤーネーム</div>
+        <%= f.text_field :name, placeholder: 'プレイヤーネーム', required: true, class: 'pure-input-1' %>
+    </div>
+    <div class='row'>
+        <div class="m">メールアドレス</div>
+        <%= f.text_field :mail, placeholder: 'メールアドレス', required: true, class: 'pure-input-1' %>
+    </div>
+    <div class='row'>
+        <div class="m">ひとことコメント</div>
+        <%= f.text_area :comment, placeholder: 'ひとことコメント', class: 'pure-input-1' %>
+    </div>
+    <%= f.submit('変更を保存', class: 'pure-button m') %>
+<% end %>
