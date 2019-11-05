@@ -5,14 +5,12 @@ body {
     text-align: center;
 
     nav {
-        background: #f0f0f0;
-        line-height: 2;
+        background: #606060;
+        line-height: 1;
 
-        a {
-            color: navy;
-            font-size: 24px;
-            text-decoration: none;
-            font-weight: 100;
+        a img {
+            height: 45px;
+            margin: 10px;
         }
     }
 
@@ -49,20 +47,25 @@ body {
                 border: 1px solid #a0a0a0;
             }
 
-            input.pure-input-1 {
+            input.pure-input-1,
+            textarea.pure-input-1 {
                 background: #444444;
                 color: #f0f0f0 !important;
                 box-shadow: none !important;
             }
 
             .input-ac {
-                width: 200px !important;
                 font-size: 32px;
-                letter-spacing: 10px;
-                text-indent: 5px;
+                letter-spacing: 20px;
+                text-indent: 10px;
                 margin: 10px 0;
                 overflow: hidden;
-                text-align: left;
+                text-align: center;
+            }
+
+            select {
+                background: #444444;
+                box-shadow: none;
             }
         }
     }

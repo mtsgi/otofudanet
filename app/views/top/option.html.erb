@@ -1,2 +1,25 @@
-<h1>Top#option</h1>
-<p>Find me in app/views/top/option.html.erb</p>
+<h3><%= @page_title = 'オプション設定' %></h3>
+
+<div>ゲームの設定を変更することができます。</div>
+
+<% if( @user.errors.present? ) %>
+    <% @user.errors.messages.each do |message| %>
+        <% message[1].each do |m| %>
+            <div class="flash"><%= m %></div>
+        <% end %>
+    <% end %>
+<% end %>
+
+<%= form_with( model: @user, method: "patch", local: true, class: 'pure-form' ) do |f| %>
+    <div class='row'>
+        <h4>ハイスピード</h4>
+        <div class="m-l">譜面の流れる速度を変更できます。</div>
+        <%= f.select :hispeed, (1..20).map { |h| [h.to_f/2, h] } %>
+    </div>
+    <div class='row'>
+        <h4>SLOW/FAST表示</h4>
+        <div class="m-l">正しいタイミングに対して早いか遅いかを表示します。</div>
+        <%= f.select :slowfast, [['ON', true], ['OFF', false]] %>
+    </div>
+    <%= f.submit('設定変更', class: 'pure-button m') %>
+<% end %>

@@ -1,7 +1,7 @@
 <% @page_title = 'トップ' %>
-<ul>
-    <li><a href="./users/enterac">カード登録</a></li>
-</ul>
+<div>
+    <a href="./users/enterac">カード登録</a>
+</div>
 <% if(!account) %>
     <%= form_with( url: sessions_path, local: true, class: 'pure-form' ) do |f| %>
         <div class="row">
@@ -19,6 +19,6 @@
 <% else %>
     <%= link_to( "ログアウト", "/sessions/" + account&.id.to_s, method: :delete ) %>
 <% end %>
-<ul>
-    <li><a href="/howto">おとふだNETへの初回登録方法</a></li>
-</ul>
+<div>
+    <a href="/howto">おとふだNETへの初回登録方法</a>
+</div>
