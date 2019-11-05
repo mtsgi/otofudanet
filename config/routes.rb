@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   resources :users, only: [:update, :edit, :index]
   resources :musics, only: [:index, :show]
+  resources :results
 
   get '/users/enterac', to: 'users#enterac'
   get '/users/register', to: 'users#register'
