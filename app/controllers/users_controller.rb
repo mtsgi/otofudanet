@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       if @user.registered
         flash.notice = "既に登録されています。"
         redirect_to( '/users/enterac' )
-      elsif
+      else
         flash.notice = "アクセスコードを確認しました。"
       end
     else
