@@ -8,4 +8,8 @@ class ResultsController < ApplicationController
       redirect_to :root
     end
   end
+
+  def show
+    @result = Result.find_by( id: params[:id] )
+  end
 end

@@ -2,6 +2,7 @@
 
 <% @results1.each do |result| %>
     <div class="result-head">
+        <%= link_to('詳細', result_path(result), class: "pure-button pure-button-primary kit-right") %>
         <div class="vod">
             <% if result.p1_score > result.p2_score %>
                 WIN
@@ -15,12 +16,12 @@
     <div class="result">
         <div>
             <div class="name"><%= result.p1.name %></div>
-            <div class="difficulty"><%= result.p1_difficulty.upcase %></div>
+            <div class="difficulty <%= result.p1_difficulty %>"><%= result.music[result.p1_difficulty] %></div>
             <div class="score">SCORE <%= result.p1_score %></div>
         </div>
         <div>
             <div class="name"><%= result.p2.name %></div>
-            <div class="difficulty"><%= result.p2_difficulty.upcase %></div>
+            <div class="difficulty <%= result.p2_difficulty %>"><%= result.music[result.p2_difficulty] %></div>
             <div class="score">SCORE <%= result.p2_score %></div>
         </div>
     </div>
@@ -28,6 +29,7 @@
 
 <% @results2.each do |result| %>
     <div class="result-head">
+        <%= link_to('詳細', result_path(result), class: "pure-button pure-button-primary kit-right") %>
         <div class="vod">
             <% if result.p1_score < result.p2_score %>
                 WIN
@@ -41,12 +43,12 @@
     <div class="result">
         <div>
             <div class="name"><%= result.p2.name %></div>
-            <div class="difficulty"><%= result.p2_difficulty.upcase %></div>
+            <div class="difficulty <%= result.p2_difficulty %>"><%= result.music[result.p2_difficulty] %></div>
             <div class="score">SCORE <%= result.p2_score %></div>
         </div>
         <div>
             <div class="name"><%= result.p1.name %></div>
-            <div class="difficulty"><%= result.p1_difficulty.upcase %></div>
+            <div class="difficulty <%= result.p1_difficulty %>"><%= result.music[result.p1_difficulty] %></div>
             <div class="score">SCORE <%= result.p1_score %></div>
         </div>
     </div>

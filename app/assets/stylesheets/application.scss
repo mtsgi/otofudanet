@@ -186,18 +186,44 @@ body {
                 width: 50%;
 
                 .name {
-                font-size: 20px;
-                font-weight: 700;
-                margin-bottom: 10px;
+                    font-size: 20px;
+                    font-weight: 700;
+                    margin-bottom: 10px;
                 }
                 
                 .difficulty {
-                background: #666666;
-                padding: 5px 0;
+                    display: inline-block;
+                    background: #666666;
+                    padding: 2px 10px;
+                    margin-top: 10px;
+                    border-radius: 3px;
+                    text-shadow: 0 2px 3px rgba(0, 0, 0, .6);
+                    
+                    &.easy {
+                        background: #25ca25;
+                    }
+                    
+                    &.normal {
+                        background: #ffb223;
+                    }
+                    
+                    &.hard {
+                        background: #ff0990;
+                    }
                 }
                 
                 .score {
-                margin-top: 10px;
+                    margin-top: 10px;
+                }
+
+                .vod {
+                    font-weight: 700;
+                    text-decoration: underline;
+                }
+
+                .info {
+                    color: limegreen;
+                    margin-top: 10px;
                 }
             }
           }
