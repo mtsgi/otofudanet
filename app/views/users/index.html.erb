@@ -5,18 +5,22 @@
     <thead>
         <tr>
             <th>R</th>
+            <th>ID</th>
             <th>NFCID</th>
             <th>SN</th>
             <th>AC</th>
+            <th>MAIL</th>
         </tr>
     </thead>
     <tbody>
         <% @users.each do |u| %>
             <tr class='kit-text-l'>
                 <td><%= "✓" if u.registered %></td>
+                <td><%= u.id %></td>
                 <td><strong><%= u.nfcid %></strong></td>
                 <td><%= u.name %></td>
                 <td><%= u.public_uid %></td>
+                <td><%= u.mail %></td>
             </tr>
         <% end %>
     </tbody>

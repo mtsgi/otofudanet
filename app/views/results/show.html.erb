@@ -1,0 +1,46 @@
+<h3>詳細リザルト</h3>
+
+<div class="result-head">
+    <%= @result.music.name %>
+    <div class="kit-sub"><%= @result.created_at %></div>
+</div>
+<div class="result">
+    <div>
+        <div class="name"><%= @result.p1.name %></div>
+        <div class="vod">
+            <% if @result.p1_score > @result.p2_score %>
+                WIN
+            <% else %>
+                LOSE
+            <% end %>
+        </div>
+        <div class="difficulty <%= @result.p1_difficulty %>"><%= @result.music[@result.p1_difficulty] %></div>
+        <div class="score">SCORE <%= @result.p1_score %></div>
+        <div class="info">
+            <div>PERFECT <%= @result.p1_perfect %></div>
+            <div>GREAT <%= @result.p1_great %></div>
+            <div>GOOD <%= @result.p1_good %></div>
+            <div>BAD <%= @result.p1_bad %></div>
+            <div>MISS <%= @result.p1_miss %></div>
+        </div>
+    </div>
+    <div>
+        <div class="name"><%= @result.p2.name %></div>
+        <div class="vod">
+            <% if @result.p1_score < @result.p2_score %>
+                WIN
+            <% else %>
+                LOSE
+            <% end %>
+        </div>
+        <div class="difficulty <%= @result.p2_difficulty %>"><%= @result.music[@result.p2_difficulty] %></div>
+        <div class="score">SCORE <%= @result.p2_score %></div>
+        <div class="info">
+            <div>PERFECT <%= @result.p2_perfect %></div>
+            <div>GREAT <%= @result.p2_great %></div>
+            <div>GOOD <%= @result.p2_good %></div>
+            <div>BAD <%= @result.p2_bad %></div>
+            <div>MISS <%= @result.p2_miss %></div>
+        </div>
+    </div>
+</div>

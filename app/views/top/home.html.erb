@@ -1,7 +1,22 @@
+<% @page_title = 'ホーム' %>
+
 <p>
-    ようこそ <%= @user.name %>さん
+    ようこそ
+    <h3><strong><%= @user.name %></strong>さん</h3>
+</p>
+
+<p>
+    <%= link_to('対戦履歴を見る', results_path, class: 'pure-button') %>
 </p>
 
 <p>勝利数：<%= @user.wincount %></p>
+
+<p>
+    <%= link_to('オプション設定', option_path, class: 'pure-button') %>
+</p>
+
+<p>
+    <%= link_to('プロフィール', profile_path, class: 'pure-button') %>
+</p>
 
 <%= link_to( "ログアウト", "/sessions/" + account&.id.to_s, method: :delete ) %>
