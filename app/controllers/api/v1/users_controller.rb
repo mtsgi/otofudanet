@@ -7,6 +7,7 @@ module Api
 
       def show
         @user = User.find_by( nfcid: params[:id].downcase )
+        # 既存ユーザー
         if(@user)
           render json: { status: 'SUCCESS', data: {
             "name": @user.name,
@@ -16,6 +17,7 @@ module Api
             "slowfast": @user.slowfast,
             "hispeed": @user.hispeed
           } }
+        # 新規ユーザー
         elsif(params[:id])
           params[:nfcid] = params[:id].downcase
           params.delete :id

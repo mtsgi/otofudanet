@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/profile', to: 'top#profile'
 
   resources :sessions, only: [:create, :destroy]
-  resources :users, only: [:update, :edit, :index]
+  resources :users, only: [:update, :edit]
   resources :musics, only: [:index, :show]
   resources :results
 
