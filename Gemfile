@@ -22,6 +22,9 @@ gem 'bcrypt', '~> 3.1.7'
 # アクセスコード発行用
 gem 'public_uid'
 
+# 環境変数設定用
+gem 'dotenv-rails'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
