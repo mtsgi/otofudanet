@@ -6,6 +6,7 @@ module Api
       end
 
       def show
+
         @user = User.find_by( nfcid: params[:id].downcase )
         # 既存ユーザー
         if(@user)
@@ -22,15 +23,33 @@ module Api
           params[:nfcid] = params[:id].downcase
           params.delete :id
           params[:password] = '0'
+          @domain = request.protocol+request.raw_host_with_port
           @user = User.new(params.permit(:nfcid, :password))
           if(@user.save)
+            #QRコード作成
+            qr = RQRCode::QRCode.new( @domain+"/users/register?ac="+@user.public_uid, :size => 10, :level => :h );0
+            png = qr.as_png(
+                      resize_gte_to: false,
+                      resize_exactly_to: false,
+                      fill: 'white',
+                      color: 'black',
+                      size: 1000,
+                      border_modules: 4,
+                      module_px_size: 10,
+                      file: nil # path to write
+                      );0
+
+            _path = "./public/qr/qr_code_"+@user.public_uid+".png"
+            File.write(_path, png.to_s, external_encoding: "ASCII-8BIT" ) # <= エンコードでエラーになるから指定する。
+
             render json: { status: 'CREATED', data: {
               "name": @user.name,
               "nfcid": @user.nfcid,
               "public_uid": @user.public_uid,
               "registered": @user.registered || false,
               "slowfast": @user.slowfast,
-              "hispeed": @user.hispeed
+              "hispeed": @user.hispeed,
+              "qr": @domain+"/qr/qr_code_"+@user.public_uid+".png"
             } }
           else
             render json: { status: 'FAILED', data: @user }

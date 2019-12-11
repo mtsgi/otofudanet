@@ -21,6 +21,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 # アクセスコード発行用
 gem 'public_uid'
+#QRコード発行用
+gem 'rqrcode'
+gem 'rqrcode_png'
+gem 'chunky_png'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
