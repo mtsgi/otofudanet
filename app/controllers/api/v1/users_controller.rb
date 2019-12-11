@@ -18,7 +18,8 @@ module Api
             "public_uid": @user.public_uid,
             "registered": @user.registered || false,
             "slowfast": @user.slowfast,
-            "hispeed": @user.hispeed
+            "hispeed": @user.hispeed,
+            "qr": "none"
           } }
         # 新規ユーザー
         elsif(params[:id])
@@ -39,8 +40,7 @@ module Api
                       border_modules: 4,
                       module_px_size: 10,
                       file: nil # path to write
-                      );0
-
+                      )
             _path = "./public/qr/qr_code_"+@user.public_uid+".png"
             File.write(_path, png.to_s, external_encoding: "ASCII-8BIT" ) # <= エンコードでエラーになるから指定する。
 
