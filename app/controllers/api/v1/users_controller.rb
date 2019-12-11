@@ -29,7 +29,7 @@ module Api
           @user = User.new(params.permit(:nfcid, :password))
           if(@user.save)
             #QRコード作成
-            qr = RQRCode::QRCode.new( @domain+"/users/register?ac="+@user.public_uid, :size => 10, :level => :h );0
+            qr = RQRCode::QRCode.new( @domain+"/users/register?ac="+@user.public_uid, :size => 10, :level => :h )
             png = qr.as_png(
                       resize_gte_to: false,
                       resize_exactly_to: false,
