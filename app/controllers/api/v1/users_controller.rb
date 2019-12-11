@@ -1,6 +1,8 @@
 module Api
   module V1
     class UsersController < ApplicationController
+      before_action :auth_token
+
       def index
         render json: { status: 'SUCCESS', data: User.all }
       end
@@ -55,6 +57,18 @@ module Api
             render json: { status: 'FAILED', data: @user }
           end
         end
+      end
+
+      private
+
+      def auth_token
+        errobj = { status: 'FORBIDDEN', data: {
+          "message": "access denied."
+        } }
+        jptime = Time.zone.now
+        seed = jptime.mon.to_s + jptime.day.to_s + ENV['TOKEN_SECRET']
+        hash = Digest::MD5.hexdigest(seed)
+        render json: errobj unless params[:token] == hash
       end
     end
   end
