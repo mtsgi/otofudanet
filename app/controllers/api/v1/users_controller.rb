@@ -20,6 +20,7 @@ module Api
             "slowfast": @user.slowfast,
             "hispeed": @user.hispeed
           } }
+
         # 新規ユーザー
         elsif(params[:id])
           params[:nfcid] = params[:id].downcase
