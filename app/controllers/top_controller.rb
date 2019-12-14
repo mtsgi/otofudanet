@@ -25,6 +25,7 @@ class TopController < ApplicationController
   end
 
   def howto
+   
   end
 
   def home

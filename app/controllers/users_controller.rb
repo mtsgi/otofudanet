@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def register
     @user = User.find_by( public_uid: params[:ac].downcase )
-    if @user 
+    if @user
       if @user.registered
         flash.notice = "既に登録されています。"
         redirect_to( '/users/enterac' )
@@ -36,7 +36,8 @@ class UsersController < ApplicationController
       params[:user][:wincount] = 0
       params[:user][:slowfast] = false
       params[:user][:hispeed] = 10
-      if @user.update(params.require(:user).permit(:name, :mail, :password, :registered, :wincount, :hispeed))
+      params[:user][:public_uid] = nil
+      if @user.update(params.require(:user).permit(:name, :mail, :password, :registered, :wincount, :hispeed,:public_uid))
         flash.notice = "初回登録が完了しました。"
         redirect_to :root
         return
