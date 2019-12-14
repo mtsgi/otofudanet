@@ -1,6 +1,7 @@
 <h3>詳細リザルト</h3>
 
 <div class="result-head">
+    <img src="<%= @result.music.image %>" alt="<%= @result.music.name %>">
     <%= @result.music.name %>
     <div class="kit-sub"><%= @result.created_at %></div>
 </div>
@@ -17,11 +18,11 @@
         <div class="difficulty <%= @result.p1_difficulty %>"><%= @result.music[@result.p1_difficulty] %></div>
         <div class="score">SCORE <%= @result.p1_score %></div>
         <div class="info">
-            <div>PERFECT <%= @result.p1_perfect %></div>
-            <div>GREAT <%= @result.p1_great %></div>
-            <div>GOOD <%= @result.p1_good %></div>
-            <div>BAD <%= @result.p1_bad %></div>
-            <div>MISS <%= @result.p1_miss %></div>
+            <div class="perfect">PERFECT <strong><%= @result.p1_perfect %></strong></div>
+            <div class="great">GREAT <strong><%= @result.p1_great %></strong></div>
+            <div class="good">GOOD <strong><%= @result.p1_good %></strong></div>
+            <div class="bad">BAD <strong><%= @result.p1_bad %></strong></div>
+            <div class="miss">MISS <strong><%= @result.p1_miss %></strong></div>
         </div>
     </div>
     <div>
@@ -36,11 +37,11 @@
         <div class="difficulty <%= @result.p2_difficulty %>"><%= @result.music[@result.p2_difficulty] %></div>
         <div class="score">SCORE <%= @result.p2_score %></div>
         <div class="info">
-            <div>PERFECT <%= @result.p2_perfect %></div>
-            <div>GREAT <%= @result.p2_great %></div>
-            <div>GOOD <%= @result.p2_good %></div>
-            <div>BAD <%= @result.p2_bad %></div>
-            <div>MISS <%= @result.p2_miss %></div>
+            <div class="perfect">PERFECT <strong><%= @result.p2_perfect %></strong></div>
+            <div class="great">GREAT <strong><%= @result.p2_great %></strong></div>
+            <div class="good">GOOD <strong><%= @result.p2_good %></strong></div>
+            <div class="bad">BAD <strong><%= @result.p2_bad %></strong></div>
+            <div class="miss">MISS <strong><%= @result.p2_miss %></strong></div>
         </div>
     </div>
 </div>

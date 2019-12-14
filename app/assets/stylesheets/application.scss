@@ -166,6 +166,11 @@ body {
             color: #444444;
             padding: 5px;
 
+            img {
+                float: left;
+                height: 36px;
+            }
+
             .vod {
                 float: left;
                 color: red;
@@ -181,8 +186,8 @@ body {
             margin: 10px 0;
             margin-top: 0;
             border-radius: 0 0 5px 5px;
-          
-            & > div {
+
+            &>div {
                 width: 50%;
 
                 .name {
@@ -190,7 +195,7 @@ body {
                     font-weight: 700;
                     margin-bottom: 10px;
                 }
-                
+
                 .difficulty {
                     display: inline-block;
                     background: #666666;
@@ -198,20 +203,20 @@ body {
                     margin-top: 10px;
                     border-radius: 3px;
                     text-shadow: 0 2px 3px rgba(0, 0, 0, .6);
-                    
+
                     &.easy {
                         background: #25ca25;
                     }
-                    
+
                     &.normal {
                         background: #ffb223;
                     }
-                    
+
                     &.hard {
                         background: #ff0990;
                     }
                 }
-                
+
                 .score {
                     margin-top: 10px;
                 }
@@ -221,12 +226,41 @@ body {
                     text-decoration: underline;
                 }
 
-                .info {
-                    color: limegreen;
-                    margin-top: 10px;
+                .info > div {
+                    color: #ffffff;
+                    text-shadow: 0 2px 4px black;
+                    padding: 8px 0;
+
+                    &.perfect {
+                        background: linear-gradient(to right, #1e9600, #fff200, #ff0000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    }
+
+                    &.great {
+                        background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    }
+
+                    &.good {
+                        background: linear-gradient(to right, #00b09b, #96c93d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    }
+
+                    &.bad {
+                        background: linear-gradient(to right, #334d50, #cbcaa5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    }
+
+                    &.miss {
+                        background: linear-gradient(to right, #8e2de2, #4a00e0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    }
                 }
             }
-          }
+        }
+
+        .char-image img {
+            max-height: 200px;
+            max-width: 100%;
+            border: 3px solid rgba(255, 255, 255, .2);
+            border-radius: 50%;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+        }
     }
 
     footer {
