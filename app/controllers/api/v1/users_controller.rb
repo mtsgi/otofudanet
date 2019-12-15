@@ -27,11 +27,13 @@ module Api
           params[:nfcid] = params[:id].downcase
           params.delete :id
           params[:password] = '0'
+          created_flag = false
           if(!@user)
               @user = User.new(params.permit(:nfcid, :password))
               if(!@user.save)
                 render json: { status: 'FAILED', data: @user }
               end
+              created_flag = 'CREATED'
           end
           @domain = request.protocol+request.raw_host_with_port
           #QRコード作成
@@ -48,7 +50,7 @@ module Api
                     )
           _path = "./public/qr/qr_code_"+@user.public_uid+".png"
           File.write(_path, png.to_s, external_encoding: "ASCII-8BIT" ) # <= エンコードでエラーになるから指定する。
-          render json: { status: 'CREATED', data: {
+          render json: { status: created_flag || 'SUCCESS', data: {
             "name": @user.name,
             "nfcid": @user.nfcid,
             "public_uid": @user.public_uid,
