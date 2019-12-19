@@ -9,8 +9,9 @@ body {
         line-height: 1;
 
         a img {
-            height: 45px;
-            margin: 10px;
+            max-height: 65px;
+            margin-top: 10px;
+            max-width: 100vw;
         }
     }
 

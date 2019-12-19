@@ -11,5 +11,7 @@
     <span class="hard"><%= @music.hard %></span>
 </div>
 
-<div class="flash">ログインすると成績が閲覧できます</div>
+<% unless account %>
+    <div class="flash">ログインすると成績が閲覧できます</div>
+<% end %>
 
