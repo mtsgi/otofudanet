@@ -1,66 +1,141 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>エラー | おとふだNET</title>
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    body {
+      background: #303030;
+      color: #f0f0f0;
+      margin: 0;
+      text-align: center
+    }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    body nav {
+      background: #606060;
+      line-height: 1
+    }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    body nav a img {
+      max-height: 65px;
+      margin-top: 10px;
+      max-width: 100vw;
+    }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    body .flash {
+      background: #1f8dd6;
+      margin: 15px;
+      padding: 5px;
+      border-radius: 3px;
+      color: #fff
+    }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    body .flash-alert {
+      background: #ca3c3c;
+      margin: 15px;
+      padding: 5px;
+      border-radius: 3px;
+      color: #fff
+    }
+
+    body main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 15px
+    }
+
+    body main input {
+      color: #303030
+    }
+
+    body main p {
+      color: #f0f0f0;
+    }
+
+    body main a {
+      color: #f0f0f0
+    }
+
+    body main .row {
+      margin: 10px 0
+    }
+
+    body main .pure-form .pure-button {
+      color: #f0f0f0;
+      background: #444444;
+      border: 1px solid #a0a0a0
+    }
+
+    body main .pure-form input.pure-input-1,
+    body main .pure-form textarea.pure-input-1 {
+      background: #444444;
+      color: #f0f0f0 !important;
+      box-shadow: none !important
+    }
+
+    body main .pure-form .input-ac {
+      font-size: 32px;
+      letter-spacing: 20px;
+      text-indent: 10px;
+      margin: 10px 0;
+      overflow: hidden;
+      text-align: center
+    }
+
+    body main .pure-form select {
+      background: #444444;
+      box-shadow: none
+    }
+
+    body main .kit-box {
+      text-align: left;
+      border-radius: 0 !important
+    }
+
+    body main .kit-box img {
+      float: left;
+      height: 75px;
+      margin-right: 5px
+    }
+
+    body main .char-image img {
+      max-height: 200px;
+      max-width: 100%;
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5)
+    }
+
+    body footer {
+      color: #a0a0a0;
+      background: #444444;
+      font-size: 15px;
+      padding: 15px;
+      margin-top: 15px
+    }
+
   </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+    integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://mtsgi.github.io/kitstrap/d/kitstrap.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
+<body>
+  <nav>
+    <a href='/'><img src="./net_logo.png" alt="おとふだNET"></a>
+  </nav>
+  <main>
+    <p>
+      ページが見つかりません。
+    </p>
+    <p>
+      <a href="/">TOPにもどる</a>
+    </p>
+  </main>
+  <footer>2019 おとふだNET - 音札プロジェクト</footer>
 </body>
+
 </html>
