@@ -10,6 +10,16 @@
     <% end %>
 <% end %>
 
+<div class="char-image row">
+    <img src="/char_kanon.png" alt="キャラ">
+</div>
+
+<div class="row m">
+    <%= link_to('アイコンを変更', @user) %>
+</div>
+
+<p class="kit-space"></p>
+
 <%= form_with( model: @user, method: "patch", local: true, class: 'pure-form' ) do |f| %>
     <div class='row'>
         <div class="m">プレイヤーネーム</div>
