@@ -25,7 +25,6 @@ class TopController < ApplicationController
   end
 
   def howto
-   
   end
 
   def home
@@ -34,5 +33,13 @@ class TopController < ApplicationController
     else
       redirect_to :root
     end
+  end
+
+  def admin
+    unless account&.mail == ENV['ADMIN_MAIL']
+      redirect_to :root
+    end
+    @musics = Music.all
+    @users = User.all
   end
 end
