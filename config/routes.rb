@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/option', to: 'top#option'
   get '/howto', to: 'top#howto'
   get '/profile', to: 'top#profile'
+  get '/icon', to: 'top#icon'
   get '/admin', to: 'top#admin'
 
   resources :sessions, only: [:create, :destroy]

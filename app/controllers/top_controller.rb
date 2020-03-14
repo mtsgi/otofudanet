@@ -19,6 +19,16 @@ class TopController < ApplicationController
   def profile
     if account
       @user = account
+      @icon = Icon.find_by(id: account.icon_id)
+    else
+      redirect_to :root
+    end
+  end
+
+  def icon
+    if account
+      @user = account
+      @icons = Icon.all
     else
       redirect_to :root
     end
@@ -30,6 +40,7 @@ class TopController < ApplicationController
   def home
     if account
       @user = account
+      @icon = Icon.find_by(id: account.icon_id)
     else
       redirect_to :root
     end
@@ -41,5 +52,6 @@ class TopController < ApplicationController
     end
     @musics = Music.all
     @users = User.all
+    @icons = Icon.all
   end
 end

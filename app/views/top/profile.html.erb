@@ -11,11 +11,11 @@
 <% end %>
 
 <div class="char-image row">
-    <img src="/char_kanon.png" alt="キャラ">
+    <%= image_tag(@icon.url) %>
 </div>
 
 <div class="row m">
-    <%= link_to('アイコンを変更', @user) %>
+    <%= link_to('アイコンを変更', icon_path) %>
 </div>
 
 <p class="kit-space"></p>

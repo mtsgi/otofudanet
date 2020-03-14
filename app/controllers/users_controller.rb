@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.find( params[:id] )
     if( @user.registered? )
       # 編集時
-      if @user.update(params.require(:user).permit(:name, :mail, :password, :registered, :wincount, :hispeed, :slowfast, :comment))
+      if @user.update(params.require(:user).permit(:name, :mail, :password, :registered, :wincount, :hispeed, :slowfast, :comment, :icon_id))
         flash.notice = "保存しました。"
         redirect_back(fallback_location: root_path)
       end
@@ -37,6 +37,7 @@ class UsersController < ApplicationController
       params[:user][:slowfast] = false
       params[:user][:hispeed] = 10
       params[:user][:public_uid] = nil
+      params[:user][:icon_id] = 1
       if @user.update(params.require(:user).permit(:name, :mail, :password, :registered, :wincount, :hispeed,:public_uid))
         flash.notice = "初回登録が完了しました。"
         redirect_to :root

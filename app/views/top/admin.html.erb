@@ -2,6 +2,7 @@
 
 <ul>
     <li>楽曲情報の管理</li>
+    <li>アイコン管理</li>
     <li>登録ユーザーの管理</li>
 </ul>
 
@@ -25,22 +26,18 @@
             <div class="pure-control-group row">
                 <label for="name" class="pure-form-message-inline">楽曲名</label>
                 <%= f.text_field :name, placeholder: '', required: true %>
-                <span class="pure-form-message-inline">This is a required field.</span>
             </div>
             <div class="pure-control-group row">
                 <label for="name" class="pure-form-message-inline">アーティスト</label>
                 <%= f.text_field :artist, placeholder: '', required: true %>
-                <span class="pure-form-message-inline">This is a required field.</span>
             </div>
             <div class="pure-control-group row">
                 <label for="name" class="pure-form-message-inline">ジャケット画像</label>
                 <%= f.text_field :image, placeholder: '', required: true %>
-                <span class="pure-form-message-inline">This is a required field.</span>
             </div>
             <div class="pure-control-group row">
                 <label for="name" class="pure-form-message-inline">譜面制作者</label>
                 <%= f.text_field :notesdesign, placeholder: '', required: true %>
-                <span class="pure-form-message-inline">This is a required field.</span>
             </div>
             <div class="pure-control-group row">
                 <label for="name" class="pure-form-message-inline">難易度</label>
@@ -60,7 +57,7 @@
 <table class="pure-table pure-table-horizontal m">
     <thead>
         <tr>
-            <th>登録</th>
+            <th>本</th>
             <th>ID</th>
             <th>NFCID</th>
             <th>名前</th>
