@@ -10,6 +10,16 @@
     <% end %>
 <% end %>
 
+<div class="char-image row">
+    <%= image_tag(@icon.url) %>
+</div>
+
+<div class="row m">
+    <%= link_to('アイコンを変更', icon_path) %>
+</div>
+
+<p class="kit-space"></p>
+
 <%= form_with( model: @user, method: "patch", local: true, class: 'pure-form' ) do |f| %>
     <div class='row'>
         <div class="m">プレイヤーネーム</div>
@@ -18,6 +28,11 @@
     <div class='row'>
         <div class="m">メールアドレス</div>
         <%= f.text_field :mail, placeholder: 'メールアドレス', required: true, class: 'pure-input-1' %>
+    </div>
+    <div class='row'>
+        <div class="m">パスワード</div>
+        <%= f.password_field :password, placeholder: '変更する場合のみ入力', class: 'pure-input-1' %>
+        <%= f.password_field :password_confirmation, placeholder: '変更する場合のみ入力(確認)', class: 'pure-input-1 m-t' %>
     </div>
     <div class='row'>
         <div class="m">ひとことコメント</div>

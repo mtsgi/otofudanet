@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   get '/option', to: 'top#option'
   get '/howto', to: 'top#howto'
   get '/profile', to: 'top#profile'
+  get '/icon', to: 'top#icon'
+  get '/admin', to: 'top#admin'
 
   resources :sessions, only: [:create, :destroy]
   resources :users, only: [:update, :edit]
-  resources :musics, only: [:index, :show]
+  resources :musics, only: [:index, :show, :update]
   resources :results
 
   get '/users/enterac', to: 'users#enterac'

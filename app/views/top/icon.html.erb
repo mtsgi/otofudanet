@@ -1,0 +1,17 @@
+<h3><%= @page_title = 'アイコン変更' %></h3>
+
+<div>ユーザーアイコンを変更できます。</div>
+
+<%= form_with( model: @user, method: "patch", local: true, class: 'pure-form' ) do |f| %>
+    <label for="option-two" class="char-radio kit-flex kit-flex-center">
+        <% @icons.each do |icon| %>
+            <%= f.label :icon_id, icon.id, value: icon.id do %>
+                <%= image_tag(icon.url) %>
+                <div>
+                    <%= f.radio_button :icon_id, icon.id %><%= icon.name %>
+                </div>
+            <% end %>
+        <% end %>
+    </label>
+    <%= f.submit('変更を保存', class: 'pure-button m') %>
+<% end %>

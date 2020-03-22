@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_05_125701) do
+ActiveRecord::Schema.define(version: 2020_03_13_184246) do
 
   create_table "cards", force: :cascade do |t|
     t.string "name"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 2019_11_05_125701) do
     t.integer "slot3"
     t.integer "slot4"
     t.integer "slot5"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "icons", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -81,6 +88,7 @@ ActiveRecord::Schema.define(version: 2019_11_05_125701) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
     t.string "public_uid"
+    t.integer "icon_id", default: 1
     t.index ["public_uid"], name: "index_users_on_public_uid", unique: true
   end
 
