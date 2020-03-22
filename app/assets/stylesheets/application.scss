@@ -81,42 +81,70 @@ body {
 
     .kit-box {
       text-align: left;
-      border-radius: 0 !important;
+      font-size: 18px;
+      overflow: hidden;
 
       img {
         float: left;
-        height: 75px;
-        margin-right: 5px;
+        height: 150px;
+        margin: -12px;
+        margin-right: 15px;
       }
 
       .easy {
+        font-size: 24px;
         display: inline-block;
         color: white;
         background: #25ca25;
-        padding: 2px 10px;
-        margin: 5px;
-        border-radius: 3px;
+        padding: 2px 12px;
+        margin: 5px 2px;
+        border-radius: 4px;
       }
 
       .normal {
+        font-size: 24px;
         display: inline-block;
         color: white;
         background: #ffb223;
-        padding: 2px 10px;
-        margin: 5px;
-        border-radius: 3px;
+        padding: 2px 12px;
+        margin: 5px 2px;
+        border-radius: 4px;
       }
 
       .hard {
+        font-size: 24px;
         display: inline-block;
         color: white;
         background: #ff0990;
-        padding: 2px 10px;
-        margin: 5px;
-        border-radius: 3px;
+        padding: 2px 12px;
+        margin: 5px 2px;
+        border-radius: 4px;
       }
     }
 
+    .otofuda-music {
+      display: block;
+      border: 2px solid white;
+      padding: 12px;
+      margin-bottom: 16px;
+      text-decoration: none;
+      border-radius: 4px;
+      box-shadow: 0 0 6px 0 rgba(0, 255, 255, .4), inset 0 0 6px 0 rgba(0, 255, 255, .4);
+      transition: .2s all ease;
+      height: 126px;
+
+      .otofuda-music-title {
+        font-size: 26px;
+        padding: 6px 0;
+        font-weight: 700;
+        border-bottom: 1px solid #f0f0f0;
+      }
+    }
+    
+    .otofuda-music:hover {
+      box-shadow: 0 0 12px 0 rgba(0, 255, 255, .8), inset 0 0 12px 0 rgba(0, 255, 255, .8);
+    }
+    
     .music-show {
       font-size: 18px;
       text-shadow: 0 2px 3px rgba(0, 0, 0, .6);
@@ -276,9 +304,21 @@ body {
         border: 3px solid rgba(255, 255, 255, .2);
         border-radius: 50%;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
-        margin-bottom: 6px;
+        margin: 6px;
+      }
+      div input {
+        margin-right: 5px;
       }
     }
+  }
+
+  .admin-icon-image {
+    max-height: 100px;
+    max-width: 100%;
+    border: 3px solid rgba(255, 255, 255, .2);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+    margin: 6px;
   }
 
   footer {

@@ -9,4 +9,6 @@ class User < ApplicationRecord
 
     has_many :p1, class_name: 'Result', :foreign_key => 'p1_id'
     has_many :p2, class_name: 'Result', :foreign_key => 'p2_id'
+
+    belongs_to :icon, class_name: 'Icon'
 end

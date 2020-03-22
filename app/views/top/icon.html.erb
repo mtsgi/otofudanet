@@ -3,7 +3,7 @@
 <div>ユーザーアイコンを変更できます。</div>
 
 <%= form_with( model: @user, method: "patch", local: true, class: 'pure-form' ) do |f| %>
-    <label for="option-two" class="char-radio kit-flex">
+    <label for="option-two" class="char-radio kit-flex kit-flex-center">
         <% @icons.each do |icon| %>
             <%= f.label :icon_id, icon.id, value: icon.id do %>
                 <%= image_tag(icon.url) %>

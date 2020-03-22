@@ -1,18 +1,15 @@
 <h3><%= @page_title = '管理画面' %></h3>
 
-<ul>
-    <li>楽曲情報の管理</li>
-    <li>アイコン管理</li>
-    <li>登録ユーザーの管理</li>
-</ul>
+<div>
+    楽曲情報の管理／アイコン管理／登録ユーザーの管理</li>
+</div>
 
 <h3>楽曲情報の管理</h3>
 
 <p>おとふだNETに登録されている楽曲情報の一覧・情報変更を実行します。情報の保存は一曲ごとに実行してください。</p>
 
 <% @musics.each do |music| %>
-    <div class="music-show">
-        <h4><%= music.id %>. <%= music.name %></h4>
+    <div class="music-show kit-text-l p-l-l">
         <div>
             <img src="<%= music.image %>" alt="<%= music.name %>">
         </div>
@@ -24,30 +21,45 @@
     <blockquote style="text-align: left">
         <%= form_with( model: music, method: "patch", local: true, class: 'pure-form' ) do |f| %>
             <div class="pure-control-group row">
-                <label for="name" class="pure-form-message-inline">楽曲名</label>
+                <label for="name" class="kit-left pure-form-message-inline">楽曲名</label>
                 <%= f.text_field :name, placeholder: '', required: true %>
             </div>
             <div class="pure-control-group row">
-                <label for="name" class="pure-form-message-inline">アーティスト</label>
+                <label for="name" class="kit-left pure-form-message-inline">アーティスト</label>
                 <%= f.text_field :artist, placeholder: '', required: true %>
             </div>
             <div class="pure-control-group row">
-                <label for="name" class="pure-form-message-inline">ジャケット画像</label>
+                <label for="name" class="kit-left pure-form-message-inline">ジャケット画像</label>
                 <%= f.text_field :image, placeholder: '', required: true %>
             </div>
             <div class="pure-control-group row">
-                <label for="name" class="pure-form-message-inline">譜面制作者</label>
+                <label for="name" class="kit-left pure-form-message-inline">譜面制作者</label>
                 <%= f.text_field :notesdesign, placeholder: '', required: true %>
             </div>
             <div class="pure-control-group row">
-                <label for="name" class="pure-form-message-inline">難易度</label>
-                <%= f.text_field :easy, class: 'pure-input-1-4', required: true %>
-                <%= f.text_field :normal, class: 'pure-input-1-4', required: true %>
-                <%= f.text_field :hard, class: 'pure-input-1-4', required: true %>
+                <label for="name" class="kit-left pure-form-message-inline">難易度(EASY)</label>
+                <%= f.number_field :easy, class: 'pure-input-1-4', required: true %>
+            </div>
+            <div class="pure-control-group row">
+                <label for="name" class="kit-left pure-form-message-inline">難易度(NORMAL)</label>
+                <%= f.number_field :normal, class: 'pure-input-1-4', required: true %>
+            </div>
+            <div class="pure-control-group row">
+                <label for="name" class="kit-left pure-form-message-inline">難易度(HARD)</label>
+                <%= f.number_field :hard, class: 'pure-input-1-4', required: true %>
             </div>
             <%= f.submit(music.name + 'を更新', class: 'pure-button m') %>
         <% end %>
     </blockquote>
+<% end %>
+
+<h3>アイコン管理</h3>
+
+<p>アイコンの一覧です。</p>
+
+<% @icons.each do |i| %>
+    <li><%= i.name %></li>
+    <%= image_tag(i.url, class: 'admin-icon-image') %>
 <% end %>
 
 <h3>登録ユーザーの管理</h3>
@@ -63,6 +75,7 @@
             <th>名前</th>
             <th>AC</th>
             <th>コメント</th>
+            <th>i</th>
         </tr>
     </thead>
     <tbody>
@@ -74,6 +87,7 @@
                 <td><%= u.name %></td>
                 <td><%= u.public_uid %></td>
                 <td><%= u.comment %></td>
+                <td><%= u.icon_id %></td>
             </tr>
         <% end %>
     </tbody>

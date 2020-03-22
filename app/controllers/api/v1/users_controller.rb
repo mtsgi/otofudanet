@@ -19,7 +19,8 @@ module Api
             "registered": @user.registered || false,
             "slowfast": @user.slowfast,
             "hispeed": @user.hispeed,
-            "qr": "none"
+            "qr": "none",
+            "icon": @user.icon.url
           } }
 
         # 未登録ユーザー
@@ -57,7 +58,8 @@ module Api
             "registered": @user.registered || false,
             "slowfast": @user.slowfast,
             "hispeed": @user.hispeed,
-            "qr": @domain+"/qr/qr_code_"+@user.public_uid+".png"
+            "qr": @domain+"/qr/qr_code_"+@user.public_uid+".png",
+            "icon": @user.icon.url
           } }
         end
       end

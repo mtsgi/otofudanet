@@ -30,6 +30,11 @@
         <%= f.text_field :mail, placeholder: 'メールアドレス', required: true, class: 'pure-input-1' %>
     </div>
     <div class='row'>
+        <div class="m">パスワード</div>
+        <%= f.password_field :password, placeholder: '変更する場合のみ入力', class: 'pure-input-1' %>
+        <%= f.password_field :password_confirmation, placeholder: '変更する場合のみ入力(確認)', class: 'pure-input-1 m-t' %>
+    </div>
+    <div class='row'>
         <div class="m">ひとことコメント</div>
         <%= f.text_area :comment, placeholder: 'ひとことコメント', class: 'pure-input-1' %>
     </div>

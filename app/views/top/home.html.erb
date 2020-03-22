@@ -10,17 +10,23 @@
 </div>
 
 <p>
-    <%= link_to('対戦履歴を見る', results_path, class: 'pure-button') %>
+    <%= link_to(tag.i(class: "fas fa-history") + ' 対戦履歴を見る', results_path, class: 'pure-button') %>
 </p>
 
-<p>勝利数：<%= @user.wincount %></p>
+<h3>累計勝利数：<%= @user.wincount %></h3>
 
 <p>
-    <%= link_to('オプション設定', option_path, class: 'pure-button') %>
+    <%= link_to(tag.i(class: "fas fa-cog") + ' オプション設定', option_path, class: 'pure-button') %>
 </p>
 
 <p>
-    <%= link_to('プロフィール編集', profile_path, class: 'pure-button') %>
+    <%= link_to(tag.i(class: "fas fa-user") + ' プロフィール編集', profile_path, class: 'pure-button') %>
 </p>
 
-<%= link_to( "ログアウト", "/sessions/" + account&.id.to_s, method: :delete ) %>
+<h4>ユーザー情報</h4>
+
+<ul>
+    <li>初回プレー：<%= account.created_at %></li>
+</ul>
+
+<%= button_to( "ログアウト", "/sessions/" + account&.id.to_s, method: :delete, class: 'pure-button' ) %>
