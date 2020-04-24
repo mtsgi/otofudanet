@@ -37,7 +37,8 @@ body {
     margin: 0 auto;
     padding: 0 15px;
 
-    input {
+    input,
+    textarea {
       color: #303030;
     }
 
@@ -62,6 +63,10 @@ body {
         background: #444444;
         color: #f0f0f0 !important;
         box-shadow: none !important;
+      }
+
+      label {
+        text-shadow: none;
       }
 
       .input-ac {
@@ -329,4 +334,13 @@ body {
     margin-top: 15px;
   }
 
+  .block-button {
+    display: block;
+    text-decoration: none;
+    text-align: left;
+    font-size: 12px;
+    h5 {
+      font-size: 20px;
+    }
+  }
 }

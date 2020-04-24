@@ -1,56 +1,91 @@
 <h3><%= @page_title = '管理画面' %></h3>
 
 <div>
-    楽曲情報の管理／アイコン管理／登録ユーザーの管理</li>
+  データベースの管理を行います。
 </div>
 
 <h3>楽曲情報の管理</h3>
 
-<p>おとふだNETに登録されている楽曲情報の一覧・情報変更を実行します。情報の保存は一曲ごとに実行してください。</p>
+<p>おとふだNETに登録されている楽曲情報の一覧・情報変更を実行します。ジャケットを押すとその楽曲の情報を変更できます。<br>情報の保存は一曲ごとに実行してください。</p>
 
 <% @musics.each do |music| %>
-    <div class="music-show kit-text-l p-l-l">
-        <div>
-            <img src="<%= music.image %>" alt="<%= music.name %>">
-        </div>
-        <span class="easy"><%= music.easy %></span>
-        <span class="normal"><%= music.normal %></span>
-        <span class="hard"><%= music.hard %></span>
-    </div>
+
+  <details class="music-show p-l-l">
+    <summary>
+      <div>
+          <img src="<%= music.image %>" alt="<%= music.name %>">
+      </div>
+      <span class="easy"><%= music.easy %></span>
+      <span class="normal"><%= music.normal %></span>
+      <span class="hard"><%= music.hard %></span>
+    </summary>
 
     <blockquote style="text-align: left">
-        <%= form_with( model: music, method: "patch", local: true, class: 'pure-form' ) do |f| %>
-            <div class="pure-control-group row">
-                <label for="name" class="kit-left pure-form-message-inline">楽曲名</label>
-                <%= f.text_field :name, placeholder: '', required: true %>
-            </div>
-            <div class="pure-control-group row">
-                <label for="name" class="kit-left pure-form-message-inline">アーティスト</label>
-                <%= f.text_field :artist, placeholder: '', required: true %>
-            </div>
-            <div class="pure-control-group row">
-                <label for="name" class="kit-left pure-form-message-inline">ジャケット画像</label>
-                <%= f.text_field :image, placeholder: '', required: true %>
-            </div>
-            <div class="pure-control-group row">
-                <label for="name" class="kit-left pure-form-message-inline">譜面制作者</label>
-                <%= f.text_field :notesdesign, placeholder: '', required: true %>
-            </div>
-            <div class="pure-control-group row">
-                <label for="name" class="kit-left pure-form-message-inline">難易度(EASY)</label>
-                <%= f.number_field :easy, class: 'pure-input-1-4', required: true %>
-            </div>
-            <div class="pure-control-group row">
-                <label for="name" class="kit-left pure-form-message-inline">難易度(NORMAL)</label>
-                <%= f.number_field :normal, class: 'pure-input-1-4', required: true %>
-            </div>
-            <div class="pure-control-group row">
-                <label for="name" class="kit-left pure-form-message-inline">難易度(HARD)</label>
-                <%= f.number_field :hard, class: 'pure-input-1-4', required: true %>
-            </div>
-            <%= f.submit(music.name + 'を更新', class: 'pure-button m') %>
-        <% end %>
+      <%= form_with( model: music, method: "patch", local: true, class: 'pure-form' ) do |f| %>
+        <div class="pure-control-group">
+          <label for="name" class="kit-left pure-form-message-inline">楽曲名</label>
+          <%= f.text_field :name, placeholder: '', required: true %>
+        </div>
+        <div class="pure-control-group">
+          <label for="name" class="kit-left pure-form-message-inline">楽曲ID</label>
+          <%= f.text_field :music_id, placeholder: '', required: true %>
+          <label class="kit-sub">識別子</label>
+        </div>
+        <div class="pure-control-group">
+          <label for="name" class="kit-left pure-form-message-inline">アーティスト</label>
+          <%= f.text_field :artist, placeholder: '', required: true %>
+        </div>
+        <div class="pure-control-group">
+          <label for="name" class="kit-left pure-form-message-inline">ジャケット画像URL</label>
+          <%= f.text_field :image, placeholder: '', required: true %>
+        </div>
+        <div class="pure-control-group">
+          <label for="name" class="kit-left pure-form-message-inline">譜面制作者</label>
+          <%= f.text_field :notesdesign, placeholder: '', required: true %>
+        </div>
+        <div class="pure-control-group">
+          <label for="name" class="kit-left pure-form-message-inline">難易度</label>
+          <%= f.number_field :easy, class: 'pure-input-1-4', required: true %>
+          <%= f.number_field :normal, class: 'pure-input-1-4', required: true %>
+          <%= f.number_field :hard, class: 'pure-input-1-4', required: true %>
+        </div>
+        <div class="pure-control-group">
+          <label for="name" class="kit-left pure-form-message-inline">譜面オフセット</label>
+          <%= f.number_field :offset, required: true %>
+        </div>
+        <div class="pure-control-group">
+          <label for="name" class="kit-left pure-form-message-inline">BPM</label>
+          <%= f.number_field :bpm, required: true, step: '0.1' %>
+          <label class="kit-sub">楽曲開始時の実BPM値(float)</label>
+        </div>
+        <div class="pure-control-group">
+          <label for="name" class="kit-left pure-form-message-inline">表示BPM</label>
+          <%= f.text_field :dispbpm, required: true %>
+          <label class="kit-sub">選曲画面で表示されるBPM値(string)</label>
+        </div>
+        <div class="pure-control-group">
+          <label for="name" class="kit-left pure-form-message-inline">楽曲コメント</label>
+          <%= f.text_area :comment %>
+        </div>
+        <div class="pure-control-group">
+          <label for="name" class="kit-left pure-form-message-inline">デモ再生位置</label>
+          <%= f.number_field :demo %>
+          <label class="kit-sub">ms</label>
+        </div>
+        <div class="pure-control-group">
+          <label for="name" class="kit-left pure-form-message-inline">カラー</label>
+          <%= f.text_field :color %>
+          <label class="kit-sub">例：255, 255, 255</label>
+        </div>
+        <div class="pure-control-group">
+          <label for="name" class="kit-left pure-form-message-inline">譜面データ</label>
+          <%= f.file_field :data %>
+          <label class="kit-sub">変更しない場合は未選択</label>
+        </div>
+        <%= f.submit(music.name + 'を更新', class: 'pure-button m') %>
+      <% end %>
     </blockquote>
+  </details>
 <% end %>
 
 <h3>アイコン管理</h3>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_13_184246) do
+ActiveRecord::Schema.define(version: 2020_04_24_162852) do
 
   create_table "cards", force: :cascade do |t|
     t.string "name"
@@ -44,13 +44,20 @@ ActiveRecord::Schema.define(version: 2020_03_13_184246) do
     t.string "name"
     t.string "artist"
     t.string "image"
-    t.string "string"
+    t.string "comment"
     t.string "notesdesign"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "easy"
     t.integer "normal"
     t.integer "hard"
+    t.string "music_id"
+    t.float "bpm", default: 120.0, null: false
+    t.string "dispbpm", default: "120.0", null: false
+    t.string "color"
+    t.integer "offset", default: 0, null: false
+    t.integer "demo", default: 0, null: false
+    t.binary "data"
   end
 
   create_table "results", force: :cascade do |t|
