@@ -11,6 +11,12 @@ class MusicsController < ApplicationController
     @music = Music.find( params[:id] )
     if account&.mail == ENV['ADMIN_MAIL']
       # 編集時
+      chart = params[:music][:data]
+      if chart
+        params[:music][:data] = chart.read
+      else
+        params[:music][:data] = @music.data
+      end
       if @music.update(params.require(:music).permit(
           :name,
           :artist,

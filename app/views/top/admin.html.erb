@@ -82,6 +82,9 @@
           <%= f.file_field :data %>
           <label class="kit-sub">変更しない場合は未選択</label>
         </div>
+        <div class="kit-sub">
+          <%= link_to '→ 現在の譜面データを表示', api_v1_music_path(music.music_id), class: 'kit-hl' %>
+        </div>
         <%= f.submit(music.name + 'を更新', class: 'pure-button m') %>
       <% end %>
     </blockquote>
