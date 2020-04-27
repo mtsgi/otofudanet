@@ -37,7 +37,8 @@ body {
     margin: 0 auto;
     padding: 0 15px;
 
-    input {
+    input,
+    textarea {
       color: #303030;
     }
 
@@ -64,6 +65,10 @@ body {
         box-shadow: none !important;
       }
 
+      label {
+        text-shadow: none;
+      }
+
       .input-ac {
         font-size: 32px;
         letter-spacing: 20px;
@@ -86,63 +91,55 @@ body {
 
       img {
         float: left;
-        height: 150px;
+        height: 120px;
         margin: -12px;
         margin-right: 15px;
       }
 
-      .easy {
-        font-size: 24px;
+      .easy, .normal, .hard {
+        font-size: 17px;
         display: inline-block;
         color: white;
         background: #25ca25;
         padding: 2px 12px;
-        margin: 5px 2px;
+        margin: 0px 2px;
         border-radius: 4px;
       }
 
       .normal {
-        font-size: 24px;
-        display: inline-block;
-        color: white;
         background: #ffb223;
-        padding: 2px 12px;
-        margin: 5px 2px;
-        border-radius: 4px;
       }
 
       .hard {
-        font-size: 24px;
-        display: inline-block;
-        color: white;
         background: #ff0990;
-        padding: 2px 12px;
-        margin: 5px 2px;
-        border-radius: 4px;
       }
     }
 
     .otofuda-music {
       display: block;
       border: 2px solid white;
-      padding: 12px;
+      padding: 8px;
       margin-bottom: 16px;
       text-decoration: none;
-      border-radius: 4px;
-      box-shadow: 0 0 6px 0 rgba(0, 255, 255, .4), inset 0 0 6px 0 rgba(0, 255, 255, .4);
+      border-radius: 6px;
+      box-shadow: 0 0 6px 0 rgba(0, 255, 255, .4);
       transition: .2s all ease;
-      height: 126px;
+      height: 100px;
 
       .otofuda-music-title {
-        font-size: 26px;
-        padding: 6px 0;
+        font-size: 22px;
         font-weight: 700;
-        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .m-t {
+        color: #a0a0a0;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #a0a0a0;
       }
     }
     
     .otofuda-music:hover {
-      box-shadow: 0 0 12px 0 rgba(0, 255, 255, .8), inset 0 0 12px 0 rgba(0, 255, 255, .8);
+      box-shadow: 0 0 12px 0 rgba(0, 255, 255, .5);
     }
     
     .music-show {
@@ -329,4 +326,13 @@ body {
     margin-top: 15px;
   }
 
+  .block-button {
+    display: block;
+    text-decoration: none;
+    text-align: left;
+    font-size: 12px;
+    h5 {
+      font-size: 20px;
+    }
+  }
 }
