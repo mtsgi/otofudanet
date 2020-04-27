@@ -19,7 +19,8 @@ module Api
           comment: m.comment,
           demo: m.demo,
           chart_url: request.base_url + api_v1_music_path(m.music_id),
-          jacket_url: m.image
+          jacket_url: m.image,
+          updated_at: m.updated_at
         } } }
       end
 
