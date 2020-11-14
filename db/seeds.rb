@@ -6,15 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Music.create!(name: 'オトフダビヨリ', artist: 'idady', image: 'https://www.ne.senshu-u.ac.jp/~proj2019-13/jacket/otofuda.png', notesdesign: 'マテ茶', easy: 1, normal: 5, hard: 9)
-Music.create!(name: 'Puzzle', artist: 'idady', image: 'https://www.ne.senshu-u.ac.jp/~proj2019-13/jacket/puzzle.png', notesdesign: 'OTOFUDA Sound Team "謎の勢力M"', easy: 4, normal: 8, hard: 10)
+Icon.create!(name: "もぺもぺ", url: "https://images.microcms-assets.io/protected/ap-northeast-1:ed6bbc68-a7a4-45d9-8689-83e8fef34826/service/otofuda/media/%E3%82%82%E3%81%BA%E3%82%82%E3%81%BA_%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB.png")
+Icon.create!(name: "サブリ", url: "https://images.microcms-assets.io/protected/ap-northeast-1:ed6bbc68-a7a4-45d9-8689-83e8fef34826/service/otofuda/media/sublimation.png")
 
 [
-	["idady","0000",true,"idady@gmail.com","対よろ","idady","3","10",true],
-	["yamasugi","1111",true,"yamasugi@gmail.com","ぽきた！w","yamasugi","3","10",true]
-].each do |name,nfcid,registered,mail,comment,password,wincount,hispeed,slowfast|
+	["idady", "0000", true, "idady@gmail.com", "対よろ", "idady", "3", "10", true, 1],
+	["yamasugi", "1111", true, "yamasugi@gmail.com", "ぽきた！w", "yamasugi", "3", "10", true, 1]
+].each do |name, nfcid, registered, mail, comment, password, wincount, hispeed, slowfast, icon_id|
 	User.create!(
-		{ name: name, nfcid: nfcid, registered: registered, mail: mail, comment: comment, password: password, wincount: wincount, hispeed: hispeed, slowfast: slowfast}
+		{ name: name, nfcid: nfcid, registered: registered, mail: mail, comment: comment, password: password, wincount: wincount, hispeed: hispeed, slowfast: slowfast, icon_id: icon_id }
 		)
 end
 
