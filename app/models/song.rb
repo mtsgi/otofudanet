@@ -1,17 +1,49 @@
 require 'open-uri'
 
 class Song
-  attr_accessor :name, :song_id, :jacket, :artist, :easy, :normal, :hard
+  attr_accessor(
+    :song_id,
+    :name, :jacket, :artist, :illustrator,
+    :easy, :normal, :hard,
+    :easy_notes, :normal_notes, :hard_notes,
+    :easy_nd, :normal_nd, :hard_nd,
+    :easy_video, :normal_video, :hard_video,
+    :comment, :copyright, :coming,
+    :bpm, :dispbpm, :color
+  )
   include ActiveModel::Model
 
   def initialize(song)
-    self.name = song['name']
     self.song_id = song['song_id']
+
+    self.name = song['name']
     self.jacket = song['jacket']['url']
     self.artist = song['artist']
+    self.illustrator = song['illustrator']
+
     self.easy = song['easy']
     self.normal = song['normal']
     self.hard = song['hard']
+
+    self.easy_notes = song['easy_notes']
+    self.normal_notes = song['normal_notes']
+    self.hard_notes = song['hard_notes']
+
+    self.easy_nd = song['easy_nd']
+    self.normal_nd = song['normal_nd']
+    self.hard_nd = song['hard_nd']
+
+    self.easy_video = song['easy_video']
+    self.normal_video = song['normal_video']
+    self.hard_video = song['hard_video']
+
+    self.comment = song['comment']
+    self.copyright = song['copyright']
+    self.coming = song['coming']
+
+    self.bpm = song['bpm']
+    self.dispbpm = song['dispbpm']
+    self.color = song['color'].to_s.split(",").map(&:strip)
   end
 
   class << self

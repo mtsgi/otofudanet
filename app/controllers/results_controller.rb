@@ -1,5 +1,6 @@
 class ResultsController < ApplicationController
   def index
+    @songs = Song.all
     if account
       @results1 = account.p1
       @results2 = account.p2
@@ -9,7 +10,6 @@ class ResultsController < ApplicationController
   end
 
   def show
-    get_songs
-    @result = Result.find_by( id: params[:id] )
+    @result = Result.find_by(id: params[:id])
   end
 end
