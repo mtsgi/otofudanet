@@ -3,25 +3,25 @@ class UsersController < ApplicationController
   end
 
   def register
-    @user = User.find_by( public_uid: params[:ac].downcase )
+    @user = User.find_by public_uid: params[:ac].downcase
     if @user
       if @user.registered
         flash.notice = "既に登録されています。"
-        redirect_to( '/users/enterac' )
+        redirect_to '/users/enterac'
       else
         flash.notice = "アクセスコードを確認しました。"
       end
     else
       flash.notice = "アクセスコードをもう一度確認してください。"
-      redirect_to( '/users/enterac' )
+      redirect_to '/users/enterac'
     end
   end
 
   def update
-    @user = User.find( params[:id] )
-    if( @user.registered? )
+    @user = User.find params[:id]
+    if @user.registered?
       # 編集時
-      if @user.update(params.require(:user).permit(:name, :mail, :password, :registered, :wincount, :hispeed, :slowfast, :comment, :icon_id))
+      if @user.update(params.require(:user).permit(:name, :mail, :password, :password_confirmation, :registered, :wincount, :hispeed, :slowfast, :comment, :icon_id))
         flash.notice = "保存しました。"
         redirect_back(fallback_location: root_path)
       end
