@@ -1,5 +1,4 @@
 class ResultsController < ApplicationController
-
   def index
     if account
       @results1 = account.p1
@@ -10,6 +9,7 @@ class ResultsController < ApplicationController
   end
 
   def show
+    get_songs
     @result = Result.find_by( id: params[:id] )
   end
 end

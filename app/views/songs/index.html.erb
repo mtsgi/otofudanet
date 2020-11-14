@@ -1,0 +1,14 @@
+<h3>楽曲リスト</h3>
+
+<% @songs.each do |song| %>
+  <%= link_to song_path(song.song_id), class: "kit-box otofuda-music" do %>
+    <img src="<%= song.jacket %>" alt="<%= song.name %>">
+    <div class="otofuda-music-title">
+      <%= song.name %>
+    </div>
+    <div class="m-b"><%= song.artist %></div>
+    <span class="easy"><%= song.easy %></span>
+    <span class="normal"><%= song.normal %></span>
+    <span class="hard"><%= song.hard %></span>
+  <% end %>
+<% end %>
