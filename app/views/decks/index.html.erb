@@ -1,0 +1,14 @@
+<h3><%= @page_title = 'デッキ編成' %></h3>
+
+<div>対戦で使うデッキを編成し、登録することができます。</div>
+
+<% unless @decks.blank? %>
+  <% @decks.each do |d| %>
+    <div>
+      <h4><%= d.name.empty? ? "名称未設定のデッキ" : d.name %></h4>
+      <p>構成月：<%= d.slot1 %>月 <%= d.slot2 %>月 <%= d.slot3 %>月 <%= d.slot4 %>月 <%= d.slot5 %>月</p>
+    </div>
+  <% end %>
+<% else %>
+  <h4>デッキが登録されていません</h4>
+<% end %>
