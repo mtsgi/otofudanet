@@ -1,0 +1,8 @@
+<% @cards.each do |c| %>
+  <div>
+  <img src="<%= c.image %>" style="height:150px">
+  <p><%= c.month %>月 / <%= c.name %> / <%= c.point %>点 (<%= c.identifier %>)</p>
+  <p><%= c.effect_label %></p>
+  <p><%= c.effect_text %></p>
+  </div>
+<% end %>

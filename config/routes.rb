@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/users/register', to: 'users#register'
 
   resources :songs
+  resources :decks
 
   namespace 'api' do
     namespace 'v1' do
