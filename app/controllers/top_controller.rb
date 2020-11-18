@@ -1,4 +1,6 @@
 class TopController < ApplicationController
+  before_action :login_required, except: [:index, :fuda, :howto]
+
   def index
     if account
       redirect_to home_path
@@ -9,41 +11,26 @@ class TopController < ApplicationController
   end
 
   def option
-    if account
-      @user = account
-    else
-      redirect_to :root
-    end
+    @user = account
   end
 
   def profile
-    if account
-      @user = account
-      @icon = Icon.find_by(id: account.icon_id)
-    else
-      redirect_to :root
-    end
+    @user = account
+    @icon = Icon.find_by(id: account.icon_id)
+
   end
 
   def icon
-    if account
-      @user = account
-      @icons = Icon.all
-    else
-      redirect_to :root
-    end
+    @user = account
+    @icons = Icon.all
   end
 
   def howto
   end
 
   def home
-    if account
-      @user = account
-      @icon = Icon.find_by(id: account.icon_id)
-    else
-      redirect_to :root
-    end
+    @user = account
+    @icon = Icon.find_by(id: account.icon_id)
   end
 
   def admin
