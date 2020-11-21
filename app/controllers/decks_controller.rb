@@ -24,6 +24,17 @@ class DecksController < ApplicationController
     end
   end
 
+  def destroy
+    @deck = Deck.find(params[:id])
+    if @deck.sub? # プライマリじゃない場合のみ削除できる
+      @deck.destroy
+      msg = "デッキを削除しました。"
+    else
+      msg = "使用するデッキは削除できません。"
+    end
+    redirect_to decks_path, notice: "#{msg}"
+  end
+
   private
   def deck_params
     params.require(:deck).permit(:user_id, :name, :slot1, :slot2, :slot3, :slot4, :slot5, :status)
