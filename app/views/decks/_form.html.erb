@@ -1,5 +1,7 @@
 <% options = (1..12).to_a %>
 
+<%= render "errors", obj:@deck %>
+
 <table>
   <tr>
     <th><%= f.label :name, "デッキ名" %></th>
