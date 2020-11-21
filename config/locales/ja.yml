@@ -2,3 +2,10 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
+  activerecord:
+    models:
+      deck: デッキ
+    attributes:
+      deck:
+        name: デッキ名
+        slot1: 月
