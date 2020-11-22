@@ -12,11 +12,10 @@
       <p>
         構成月：<%= d.slot1 %>月 <%= d.slot2 %>月 <%= d.slot3 %>月 <%= d.slot4 %>月 <%= d.slot5 %>月<br>
         <% if d.sub? %>
-          <%= link_to "使うデッキにする", [:change_status, d], method: :patch %>
+          <%= link_to "使うデッキにする", [:change_status, d], method: :patch %> / <%= link_to "デッキ削除", d, method: :delete %>
         <% else # statusがmainの時 %>
           <%= "*選択中のデッキ*" %>
         <% end %>
-         / <%= link_to "デッキ削除", d, method: :delete %>
       </p>
     </div>
   <% end %>
