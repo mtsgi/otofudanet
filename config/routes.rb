@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   get '/users/register', to: 'users#register'
 
   resources :songs
-  resources :decks
+  resources :decks do
+    patch "change_status", on: :member
+  end
 
   namespace 'api' do
     namespace 'v1' do
