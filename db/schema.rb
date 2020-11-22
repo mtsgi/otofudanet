@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_11_16_040427) do
     t.integer "slot5"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "status"
+    t.integer "status", default: 0
   end
 
   create_table "icons", force: :cascade do |t|
