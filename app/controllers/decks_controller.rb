@@ -37,7 +37,7 @@ class DecksController < ApplicationController
 
   def change_status
     @deck = Deck.find(params[:id]) # 選んだやつ
-    main_deck = Deck.main # 今メインになってるやつ,リレーションオブジェクトで返ってくる(whereメソッドの検索と同じなので)
+    main_deck = account.decks.main # 今メインになってるやつ,リレーションオブジェクトで返ってくる(whereメソッドの検索と同じなので)
 
     if @deck.sub? # 選んだやつがメインじゃない時
       main_deck.each do |d| # 相当壊れてなければ１レコードしかないはずだけど万が一複数個mainになってたらそれが全部subになる
