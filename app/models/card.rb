@@ -43,5 +43,11 @@ class Card
       end
       @cards
     end
+
+    def months *n # 指定した月の札一覧を返す,
+      @cards = Card.all.select do |c|
+        c if n.include?(c.month)
+      end
+    end
   end
 end

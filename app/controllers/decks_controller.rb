@@ -7,8 +7,8 @@ class DecksController < ApplicationController
   end
   
   def show
-    @cards = Card.all
     @deck = Deck.find(params[:id])
+    @cards = Card.months(@deck.slot1, @deck.slot2, @deck.slot3, @deck.slot4, @deck.slot5) # デッキに含まれている札を取得
   end
 
   def new
