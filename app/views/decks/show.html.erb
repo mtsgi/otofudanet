@@ -1,8 +1,21 @@
-<% @cards.each do |c| %>
-  <div>
-  <img src="<%= c.image %>" style="height:150px">
-  <p><%= c.month %>月 / <%= c.name %> / <%= c.point %>点 (<%= c.identifier %>)</p>
-  <p><%= c.effect_label %></p>
-  <p><%= c.effect_text %></p>
-  </div>
-<% end %>
+<h3><%= @deck.name.blank? ? "名称未設定のデッキ" : @deck.name %></h3>
+<%= link_to ">デッキ情報を編集する", [:edit, @deck] %>
+
+<div>
+  <h4>構成</h4>
+  <p>
+    <%= @deck.slot1 %>月 <%= @deck.slot2 %>月 <%= @deck.slot3 %>月 <%= @deck.slot4 %>月 <%= @deck.slot5 %>月
+  </p>
+</div>
+
+<div>
+  <h4>構成札一覧</h4>
+  <% @cards.each do |c| %>
+    <div>
+    <img src="<%= c.image %>" style="height:150px">
+    <p><%= c.month %>月 / <%= c.name %> / <%= c.point %>点 (<%= c.identifier %>)</p>
+    <p><%= c.effect_label %></p>
+    <p><%= c.effect_text %></p>
+    </div>
+  <% end %>
+</div>

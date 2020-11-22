@@ -8,6 +8,7 @@ class DecksController < ApplicationController
   
   def show
     @cards = Card.all
+    @deck = Deck.find(params[:id])
   end
 
   def new
@@ -21,6 +22,20 @@ class DecksController < ApplicationController
       redirect_to decks_path, notice: "デッキを登録しました。"
     else
       render "new"
+    end
+  end
+
+  def edit
+    @deck = Deck.find(params[:id])
+  end
+  
+  def update
+    @deck = Deck.find(params[:id])
+    @deck.assign_attributes(deck_params)
+    if @deck.save
+      redirect_to @deck, notice: "変更を保存しました。"
+    else
+      render "edit"
     end
   end
 
