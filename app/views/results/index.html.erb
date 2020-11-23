@@ -10,18 +10,18 @@
                 LOSE
             <% end %>
         </div>
-        <%= result.music.name %>
+        <%= result.music_id %>
         <div class="kit-sub"><%= result.created_at %></div>
     </div>
     <div class="result">
         <div>
             <div class="name"><%= result.p1.name %></div>
-            <div class="difficulty <%= result.p1_difficulty %>"><%= result.music[result.p1_difficulty] %></div>
+            <div class="difficulty <%= result.p1_difficulty %>"><%= result.p1_difficulty %></div>
             <div class="score">SCORE <%= result.p1_score %></div>
         </div>
         <div>
             <div class="name"><%= result.p2.name %></div>
-            <div class="difficulty <%= result.p2_difficulty %>"><%= result.music[result.p2_difficulty] %></div>
+            <div class="difficulty <%= result.p2_difficulty %>"><%= result.p2_difficulty %></div>
             <div class="score">SCORE <%= result.p2_score %></div>
         </div>
     </div>
@@ -37,18 +37,18 @@
                 LOSE
             <% end %>
         </div>
-        <%= result.music.name %>
+        <%= result.music_id %>
         <div class="kit-sub"><%= result.created_at %></div>
     </div>
     <div class="result">
         <div>
             <div class="name"><%= result.p2.name %></div>
-            <div class="difficulty <%= result.p2_difficulty %>"><%= result.music[result.p2_difficulty] %></div>
+            <div class="difficulty <%= result.p2_difficulty %>"><%= result.p2_difficulty %></div>
             <div class="score">SCORE <%= result.p2_score %></div>
         </div>
         <div>
             <div class="name"><%= result.p1.name %></div>
-            <div class="difficulty <%= result.p1_difficulty %>"><%= result.music[result.p1_difficulty] %></div>
+            <div class="difficulty <%= result.p1_difficulty %>"><%= result.p1_difficulty %></div>
             <div class="score">SCORE <%= result.p1_score %></div>
         </div>
     </div>

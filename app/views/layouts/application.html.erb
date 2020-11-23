@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://mtsgi.github.io/kitstrap/d/kitstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mtsgi/kitstrap/d/0.6/kitstrap.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -74,16 +74,17 @@
   </head>
 
   <body>
-    <nav>
+    <header>
       <a href='/'><img src="/net_logo.png" alt="おとふだNET"></a>
-    </nav>
+    </header>
+
     <% if( account ) %>
-      <div class="p-l">
+      <div class="p-l otofuda-mobilenav">
         <div class="pure-button-group" role="group" aria-label="...">
           <a href="/home" class="pure-button"><i class="fas fa-home"></i></a>
           <a href="/option" class="pure-button"><i class="fas fa-cog"></i></a>
           <a href="/profile" class="pure-button"><i class="fas fa-user"></i></a>
-          <a href="/musics" class="pure-button"><i class="fas fa-music"></i></a>
+          <a href="/songs" class="pure-button"><i class="fas fa-music"></i></a>
         </div>
       </div>
     <% end %>
@@ -93,7 +94,34 @@
     <% if( flash.alert ) %>
       <div class='flash-alert'><%= flash.alert %></div>
     <% end %>
-    <main><%= yield %></main>
-    <footer>2019 おとふだNET - 音札プロジェクト</footer>
+
+    <div class="main-wrapper">
+      <nav>
+        <% if( account ) %>
+          <a href="/home">
+            <i class="fas fa-home"></i>ホーム画面
+          </a>
+          <a href="/option">
+            <i class="fas fa-cog"></i>オプション設定
+          </a>
+          <a href="/profile">
+            <i class="fas fa-user"></i>プロフィール
+          </a>
+          <a href="/songs">
+            <i class="fas fa-music"></i>楽曲リスト
+          </a>
+        <% else %>
+          <a href="/">
+            <i class="fas fa-sign-in-alt"></i>ログイン
+          </a>
+          <a href="/users/enterac">
+            <i class="fas fa-id-card"></i>カード登録
+          </a>
+        <% end%>
+      </nav>
+      <main><%= yield %></main>
+    </div>
+
+    <footer>© 2020 おとふだNET - 音札プロジェクト</footer>
   </body>
 </html>

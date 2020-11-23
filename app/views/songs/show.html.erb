@@ -1,0 +1,36 @@
+<% @page_title = @song.name %>
+
+<h3>楽曲詳細</h3>
+
+<div class="music-show">
+    <div class="music-show__jacket">
+        <img src="<%= @song.jacket %>" alt="<%= @song.name %>">
+    </div>
+    <div class="music-show__name"><%= @song.name %></div>
+    <div class="music-show__sub"><%= @song.artist %></div>
+
+    <div class="music-show__difficulty">
+      <span class="dif easy"><%= @song.easy %></span>
+      <span><%= @song.easy_notes %> Notes</span>
+    </div>
+    <div>譜面制作：<%= @song.easy_nd %></div>
+    <%#= link_to('譜面紹介動画を見る', @song.easy_video, target: "_blank") if @song.easy_video %>
+
+    <div class="music-show__difficulty">
+      <span class="dif normal"><%= @song.normal %></span>
+      <span><%= @song.normal_notes %> Notes</span>
+    </div>
+    <div>譜面制作：<%= @song.normal_nd %></div>
+    <%#= link_to('譜面紹介動画を見る', @song.normal_video, target: "_blank") if @song.normal_video %>
+
+    <div class="music-show__difficulty">
+      <span class="dif hard"><%= @song.hard %></span>
+      <span><%= @song.hard_notes %> Notes</span>
+    </div>
+    <div>譜面制作：<%= @song.hard_nd %></div>
+    <%#= link_to('譜面紹介動画を見る', @song.hard_video, target: "_blank") if @song.hard_video %>
+</div>
+
+<% unless account %>
+    <div class="flash">ログインすると成績が閲覧できます</div>
+<% end %>

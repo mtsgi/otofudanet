@@ -50,7 +50,6 @@ class TopController < ApplicationController
     unless account&.mail == ENV['ADMIN_MAIL']
       redirect_to :root
     end
-    @musics = Music.all
     @users = User.all
     @icons = Icon.all
   end

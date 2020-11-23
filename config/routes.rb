@@ -10,11 +10,12 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:create, :destroy]
   resources :users, only: [:update, :edit]
-  resources :musics, only: [:index, :show, :update]
   resources :results
 
   get '/users/enterac', to: 'users#enterac'
   get '/users/register', to: 'users#register'
+
+  resources :songs
 
   namespace 'api' do
     namespace 'v1' do
