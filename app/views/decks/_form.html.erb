@@ -1,0 +1,22 @@
+<% options = (1..12).to_a %>
+
+<a href="https://www.ne.senshu-u.ac.jp/~proj2019-13/fuda" target="_blank" rel=”noopener noreferrer”><i class="fas fa-external-link-alt"></i>札一覧を確認する</a>
+
+<%= render "errors", obj:@deck %>
+
+<table>
+  <tr>
+    <th><%= f.label :name, "デッキ名" %></th>
+    <td colspan="5"><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+    <th>月</th>
+    <td><%= f.select :slot1, options %></td>
+    <td><%= f.select :slot2, options %></td>
+    <td><%= f.select :slot3, options %></td>
+    <td><%= f.select :slot4, options %></td>
+    <td><%= f.select :slot5, options %></td>
+  </tr>
+  <%= f.hidden_field :user_id, value: @deck.user_id %>
+  <%= f.hidden_field :status, value: @deck.status %>
+</table>

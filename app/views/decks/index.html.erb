@@ -1,0 +1,24 @@
+<h3><%= @page_title = 'デッキ編成' %></h3>
+
+<div>
+  対戦で使うデッキを編成し、登録することができます。<br>
+  <%= link_to '>新しいデッキを登録する', new_deck_path %>
+</div>
+
+<% if @decks.present? %>
+  <% @decks.each do |d| %>
+    <div>
+      <h4><%= link_to "#{d.name.blank? ? '名称未設定のデッキ' : d.name}", d %></h4>
+      <p>
+        構成月：<%= d.slot1 %>月 <%= d.slot2 %>月 <%= d.slot3 %>月 <%= d.slot4 %>月 <%= d.slot5 %>月<br>
+        <% if d.sub? %>
+          <%= link_to "使うデッキにする", [:change_status, d], method: :patch %> / <%= link_to "デッキ削除", d, method: :delete %>
+        <% else # statusがmainの時 %>
+          <%= "*選択中のデッキ*" %>
+        <% end %>
+      </p>
+    </div>
+  <% end %>
+<% else %>
+  <h4>デッキが登録されていません</h4>
+<% end %> 

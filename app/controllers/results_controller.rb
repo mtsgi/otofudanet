@@ -1,12 +1,10 @@
 class ResultsController < ApplicationController
+  before_action :login_required
+
   def index
     @songs = Song.all
-    if account
-      @results1 = account.p1
-      @results2 = account.p2
-    else
-      redirect_to :root
-    end
+    @results1 = account.p1
+    @results2 = account.p2
   end
 
   def show

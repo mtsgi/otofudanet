@@ -20,6 +20,8 @@ Icon.create!(name: "大音", url: "https://www.ne.senshu-u.ac.jp/~proj2019-13/up
 		)
 end
 
+Deck.create!(user_id: 2, name: "僕の考えた最強のデッキ", slot1: 1, slot2: 2, slot3: 3, slot4: 4, slot5: 5, status: 1)
+
 [
 	[1,1,1,100,100,80,50,20,0,2,1,200,200,1,2,3,4]
 ].each do|music_id,p1_id,p1_difficulty,p1_score,p1_perfect,p1_great,p1_good,p1_bad,p1_miss,p2_id,p2_difficulty,p2_score,p2_perfect,p2_great,p2_good,p2_bad,p2_miss|

@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
         User.find_by( id: session[:user_id] )
       end
     end
+
+    def login_required
+      redirect_to :root unless account
+    end
   
     helper_method( :account )
 end

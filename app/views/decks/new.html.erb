@@ -1,0 +1,8 @@
+<h3><%= @page_title = '新規デッキ編成・登録' %></h3>
+
+<div>新しいデッキを編成できます。</div>
+
+<%= form_with model: @deck, method: "post", local: true, class: 'pure-form' do |f| %>
+  <%= render "form", f:f %>
+  <%= f.submit('デッキを登録する', class: 'pure-button m') %>
+<% end %>

@@ -1,0 +1,8 @@
+<h3><%= @page_title = 'デッキ情報編集' %></h3>
+
+<div>デッキを編集できます。</div>
+
+<%= form_with model: @deck, method: "patch", local: true, class: 'pure-form' do |f| %>
+  <%= render "form", f:f %>
+  <%= f.submit('編集を保存する', class: 'pure-button m') %>
+<% end %>

@@ -26,6 +26,9 @@ gem 'rqrcode'
 gem 'rqrcode_png'
 gem 'chunky_png'
 
+# 国際化
+gem 'rails-i18n', '>= 5.0'
+
 # 環境変数設定用
 gem 'dotenv-rails'
 
