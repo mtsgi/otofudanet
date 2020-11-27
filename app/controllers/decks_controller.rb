@@ -3,7 +3,7 @@ class DecksController < ApplicationController
 
   def index
     @user = account
-    @decks = @user.decks
+    @decks = @user.decks.order("created_at")
   end
   
   def show

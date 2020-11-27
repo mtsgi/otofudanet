@@ -4,19 +4,19 @@
 
 <%= render "errors", obj:@deck %>
 
-<table>
-  <tr>
-    <th><%= f.label :name, "デッキ名" %></th>
-    <td colspan="5"><%= f.text_field :name %></td>
-  </tr>
-  <tr>
-    <th>月</th>
-    <td><%= f.select :slot1, options %></td>
-    <td><%= f.select :slot2, options %></td>
-    <td><%= f.select :slot3, options %></td>
-    <td><%= f.select :slot4, options %></td>
-    <td><%= f.select :slot5, options %></td>
-  </tr>
+<div class="m-m">
+  <div class="row">
+    <h4><%= f.label :name, "デッキ名" %></h4>
+    <%= f.text_field :name %>
+  </div>
+  <div class="row">
+    <h4>構成月</h4>
+    <%= f.select :slot1, options %>
+    <%= f.select :slot2, options %>
+    <%= f.select :slot3, options %>
+    <%= f.select :slot4, options %>
+    <%= f.select :slot5, options %>
+  </div>
   <%= f.hidden_field :user_id, value: @deck.user_id %>
   <%= f.hidden_field :status, value: @deck.status %>
-</table>
+</div>
