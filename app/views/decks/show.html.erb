@@ -1,23 +1,27 @@
 <% @page_title = "デッキ詳細" %>
 
 <h3><%= @deck.name.blank? ? "名称未設定のデッキ" : @deck.name %></h3>
+
+<div class="m-m p-m kit-font-l">
+  <h4>構成月</h4>
+  <%= @deck.slot1 %>月 <%= @deck.slot2 %>月 <%= @deck.slot3 %>月 <%= @deck.slot4 %>月 <%= @deck.slot5 %>月
+</div>
+
 <%= link_to ">デッキ情報を編集する", [:edit, @deck] %>
 
-<div>
-  <h4>構成</h4>
-  <p>
-    <%= @deck.slot1 %>月 <%= @deck.slot2 %>月 <%= @deck.slot3 %>月 <%= @deck.slot4 %>月 <%= @deck.slot5 %>月
-  </p>
+<div class="m-m">
+  <h4>構成札一覧</h4>
+  <div class="card-list">
+    <% @cards.each do |c| %>
+      <div class="item kit-font-s">
+        <img src="<%= c.image %>"><br>
+        <p><%= c.effect_text %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
 
-<div>
-  <h4>構成札一覧</h4>
-  <% @cards.each do |c| %>
-    <div>
-    <img src="<%= c.image %>" style="height:150px">
-    <p><%= c.month %>月 / <%= c.name %> / <%= c.point %>点 (<%= c.identifier %>)</p>
-    <p><%= c.effect_label %></p>
-    <p><%= c.effect_text %></p>
-    </div>
-  <% end %>
-</div>
+
+<a href="https://www.ne.senshu-u.ac.jp/~proj2019-13/fuda" target="_blank" rel=”noopener noreferrer” class="p-m">
+  <i class="fas fa-external-link-alt"></i>より詳しい札の情報はこちらから
+</a>

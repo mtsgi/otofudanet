@@ -1,3 +1,32 @@
 // Place all the styles related to the decks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.button-black { //デッキ削除ボタン用
+  color: #f0f0f0;
+  background: #444444;
+  border: 1px solid #a0a0a0;
+}
+.button-blue {
+  background: #42b8dd;
+  cursor: default;
+}
+
+.card-list{ // 札一覧用
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  @media screen and (max-width:720px) { // スマホ用
+    flex-flow: column nowrap;
+  }
+  .item{ // 札と説明文のセット
+    flex-basis: 23%;
+    margin: 1%;
+    img{
+      height: 150px;
+    }
+    p{
+      margin: 0 1em;
+    }
+  }
+}
