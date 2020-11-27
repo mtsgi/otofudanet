@@ -1,3 +1,5 @@
+<% @page_title = "デッキ詳細" %>
+
 <h3><%= @deck.name.blank? ? "名称未設定のデッキ" : @deck.name %></h3>
 <%= link_to ">デッキ情報を編集する", [:edit, @deck] %>
 
