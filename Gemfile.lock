@@ -101,7 +101,9 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (0.9.2)
-    mimemagic (0.3.3)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
     minitest (5.12.0)
@@ -115,7 +117,8 @@ GEM
     public_suffix (4.0.1)
     public_uid (1.3.1)
       orm_adapter (~> 0.5)
-    puma (3.12.6)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-proxy (0.6.5)
@@ -233,7 +236,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   pg
   public_uid
-  puma (~> 3.12)
+  puma (~> 4.3)
   rails (~> 6.0.0)
   rails-i18n (>= 5.0)
   rqrcode
