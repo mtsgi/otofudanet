@@ -7,7 +7,7 @@ class DecksController < ApplicationController
   end
   
   def show
-    @deck = Deck.find(params[:id])
+    @deck = account.decks.find(params[:id])
     @cards = Card.months(@deck.slot1, @deck.slot2, @deck.slot3, @deck.slot4, @deck.slot5) # デッキに含まれている札を取得
   end
 
@@ -26,11 +26,11 @@ class DecksController < ApplicationController
   end
 
   def edit
-    @deck = Deck.find(params[:id])
+    @deck = account.decks.find(params[:id])
   end
   
   def update
-    @deck = Deck.find(params[:id])
+    @deck = account.decks.find(params[:id])
     @deck.assign_attributes(deck_params)
     if @deck.save
       redirect_to @deck, notice: "変更を保存しました。"
@@ -40,7 +40,7 @@ class DecksController < ApplicationController
   end
 
   def destroy
-    @deck = Deck.find(params[:id])
+    @deck = account.decks.find(params[:id])
     if @deck.sub? # プライマリじゃない場合のみ削除できる
       @deck.destroy
       msg = "デッキを削除しました。"
@@ -51,7 +51,7 @@ class DecksController < ApplicationController
   end
 
   def change_status
-    @deck = Deck.find(params[:id]) # 選んだやつ
+    @deck = account.decks.find(params[:id]) # 選んだやつ
     main_deck = account.decks.main # 今メインになってるやつ,リレーションオブジェクトで返ってくる(whereメソッドの検索と同じなので)
 
     if @deck.sub? # 選んだやつがメインじゃない時
