@@ -14,12 +14,14 @@
     <div class='row'>
         <h4>ハイスピード</h4>
         <div class="m-l">譜面の流れる速度を変更できます。</div>
-        <%= f.select :hispeed, (1..20).map { |h| [h.to_f/2, h] } %>
+        <%= f.select :hispeed, (1..30).map { |h| [h.to_f/2, h] } %>
     </div>
+    <!--
     <div class='row'>
         <h4>SLOW/FAST表示</h4>
         <div class="m-l">正しいタイミングに対して早いか遅いかを表示します。</div>
         <%= f.select :slowfast, [['ON', true], ['OFF', false]] %>
     </div>
+    -->
     <%= f.submit('設定変更', class: 'pure-button m') %>
 <% end %>
