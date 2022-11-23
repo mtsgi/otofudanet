@@ -1,5 +1,9 @@
 <h3>対戦履歴</h3>
 
+<% if @results1.size == 0 && @results2.size == 0 %>
+対戦履歴はありません
+<% end %>
+
 <% @results1.each do |result| %>
     <div class="result-head">
         <%= link_to('詳細', result_path(result), class: "pure-button pure-button-primary kit-right") %>

@@ -14,21 +14,21 @@
       <span><%= @song.easy_notes %> Notes</span>
     </div>
     <div>譜面制作：<%= @song.easy_nd %></div>
-    <%= link_to('譜面紹介動画を見る', @song.easy_video, target: "_blank") if @song.easy_video %>
+    <%= link_to('譜面紹介動画を見る', @song.easy_video, target: "_blank", class: "music-show__video") if @song.easy_video %>
 
     <div class="music-show__difficulty">
       <span class="dif normal"><%= @song.normal %></span>
       <span><%= @song.normal_notes %> Notes</span>
     </div>
     <div>譜面制作：<%= @song.normal_nd %></div>
-    <%= link_to('譜面紹介動画を見る', @song.normal_video, target: "_blank") if @song.normal_video %>
+    <%= link_to('譜面紹介動画を見る', @song.normal_video, target: "_blank", class: "music-show__video") if @song.normal_video %>
 
     <div class="music-show__difficulty">
       <span class="dif hard"><%= @song.hard %></span>
       <span><%= @song.hard_notes %> Notes</span>
     </div>
     <div>譜面制作：<%= @song.hard_nd %></div>
-    <%= link_to('譜面紹介動画を見る', @song.hard_video, target: "_blank") if @song.hard_video %>
+    <%= link_to('譜面紹介動画を見る', @song.hard_video, target: "_blank", class: "music-show__video") if @song.hard_video %>
 </div>
 
 <% unless account %>
