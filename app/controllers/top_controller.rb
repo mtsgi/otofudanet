@@ -39,5 +39,6 @@ class TopController < ApplicationController
     end
     @users = User.all
     @icons = Icon.all
+    @decks = Deck.all
   end
 end

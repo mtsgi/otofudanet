@@ -15,20 +15,16 @@
 
 <h3>累計勝利数：<%= @user.wincount %></h3>
 
-<%= link_to option_path do %>
-  <div class="pure-button block-button">
-    <h5><i class="fas fa-cog"></i>オプション設定</h5>
-    ゲーム設定を変更することができます
-  </div>
+<%= link_to(option_path, class: "pure-button block-button") do %>
+  <h5><i class="fas fa-cog"></i>オプション設定</h5>
+  ゲーム設定を変更することができます
 <% end %>
 
 <kit-space></kit-space>
 
-<%= link_to profile_path do %>
-  <div class="pure-button block-button">
-    <h5><i class="fas fa-user"></i>プロフィール編集</h5>
-    ユーザープロフィールを変更できます
-  </div>
+<%= link_to(profile_path, class: "pure-button block-button") do %>
+  <h5><i class="fas fa-user"></i>プロフィール編集</h5>
+  ユーザープロフィールを変更できます
 <% end %>
 
 <h4>ユーザー情報</h4>
