@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Icon.create!(name: "華音", url: "https://www.ne.senshu-u.ac.jp/~proj2019-13/upload/icons/kanon.png")
-Icon.create!(name: "門音", url: "https://www.ne.senshu-u.ac.jp/~proj2019-13/upload/icons/kadone.png")
-Icon.create!(name: "空音", url: "https://www.ne.senshu-u.ac.jp/~proj2019-13/upload/icons/kunon.png")
-Icon.create!(name: "大音", url: "https://www.ne.senshu-u.ac.jp/~proj2019-13/upload/icons/hirono.png")
+Icon.create!(name: "華音", url: "hhttps://db.otofuda.com/icons/kanon.png")
+Icon.create!(name: "門音", url: "https://db.otofuda.com/icons/kadone.png")
+Icon.create!(name: "空音", url: "https://db.otofuda.com/icons/kunon.png")
+Icon.create!(name: "大音", url: "https://db.otofuda.com/icons/hirono.png")
 
 [
 	["idady", "0000", true, "idady@gmail.com", "対よろ", "idady", "3", "10", true, 1],
