@@ -26,13 +26,13 @@
         <%= f.text_field :name, placeholder: 'プレイヤーネーム', required: true, class: 'pure-input-1' %>
     </div>
     <div class='row'>
-        <div class="m">メールアドレス</div>
-        <%= f.text_field :mail, placeholder: 'メールアドレス', required: true, class: 'pure-input-1' %>
+        <div class="m">ユーザーID(メールアドレス)</div>
+        <%= f.text_field :mail, placeholder: 'ユーザーID', required: true, class: 'pure-input-1' %>
     </div>
     <div class='row'>
-        <div class="m">パスワード</div>
-        <%= f.password_field :password, placeholder: '変更する場合のみ入力', class: 'pure-input-1' %>
-        <%= f.password_field :password_confirmation, placeholder: '変更する場合のみ入力(確認)', class: 'pure-input-1 m-t' %>
+        <div class="m">パスワード (変更する場合のみ入力)</div>
+        <%= f.password_field :password, placeholder: '変更する場合のみ入力', class: 'pure-input-1', autocomplete: 'new-password' %>
+        <%= f.password_field :password_confirmation, placeholder: '変更する場合のみ入力(確認)', class: 'pure-input-1 m-t', autocomplete: 'new-password' %>
     </div>
     <div class='row'>
         <div class="m">ひとことコメント</div>

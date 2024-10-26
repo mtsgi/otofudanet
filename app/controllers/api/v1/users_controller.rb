@@ -20,7 +20,8 @@ module Api
             "slowfast": @user.slowfast,
             "hispeed": @user.hispeed,
             "qr": "none",
-            "icon": @user.icon.url
+            "icon": @user.icon.url,
+            "comment": @user.comment
           } }
 
         # 未登録ユーザー
@@ -59,7 +60,8 @@ module Api
             "slowfast": @user.slowfast,
             "hispeed": @user.hispeed,
             "qr": @domain+"/qr/qr_code_"+@user.public_uid+".png",
-            "icon": @user.icon.url
+            "icon": @user.icon.url,
+            "comment": @user.comment
           } }
         end
       end

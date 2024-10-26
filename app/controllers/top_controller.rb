@@ -22,7 +22,7 @@ class TopController < ApplicationController
 
   def icon
     @user = account
-    @icons = Icon.all
+    @icons = Icon.all.order(:id)
   end
 
   def howto
